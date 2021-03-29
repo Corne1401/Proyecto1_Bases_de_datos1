@@ -1,4 +1,17 @@
-<h3>Log in</h3>
-<li *ngFor="let employee of this.employees">
-    <ul>{{employee.Name}}</ul>
-</li>
+<div class="container-fluid" >
+    <form id="logInForm">
+        <div class="mb-3">
+            <label for="userName" class="form-label">User</label>
+            <input type="text" class="form-control" id="userName" aria-describedby="userHelp">
+            <div id="userHelp" class="form-text">Please enter your user name above.</div>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" aria-describedby="passwordHelp">
+            <div id="passwordHelp" class="form-text">Please enter yout password above.</div>
+        </div>
+        <div class="text-end">
+            <button type="submit" class="btn btn-primary" id="submitBtn">Log in</button>
+        </div>
+    </form>
+</div>

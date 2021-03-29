@@ -19,24 +19,11 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.getEmployees();
-    this.printEmployees();
   }
 
   async getEmployees(){
-    //no funciona porque .toPrommise no es un observable
-    // -->database.service.ts
-    //this.employees = await this.databaseService.getAllEmployees();
-    
-    //find how to get data from the observables
+    //To get data from database, match interface names with table names
     this.databaseService.getAllEmployees().subscribe(employees => this.employees = employees);
-
   }
-  printEmployees():void{
-    for (let employee in this.employees){
-      console.dir(employee);
-    }
-  }
-
-  
 
 }

@@ -21,8 +21,4 @@ export class DatabaseService {
     
   }
 
-  // async getAllEmployees(){
-  //   return await this.http.get<Employee[]>('http://localhost:5000/getAllEmployees').toPromise();
-  // }
-
 }

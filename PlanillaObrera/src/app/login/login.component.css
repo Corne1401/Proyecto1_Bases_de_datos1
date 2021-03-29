@@ -1,0 +1,11 @@
+#submitBtn{
+    background-color: rgb(2, 91, 255);
+}
+#logInForm{
+    padding: 5px;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
