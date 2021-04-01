@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Employee } from '../Interfaces/employee';
-import { DatabaseService } from '../database.service';
+import { Administrator } from '../Interfaces/Administrator';
+import { DatabaseService } from '../_database/database.service';
+import { ThrowStmt } from '@angular/compiler';
 //import { Observable } from 'rxjs';
 
 @Component({
@@ -11,19 +12,25 @@ import { DatabaseService } from '../database.service';
 })
 export class LoginComponent implements OnInit {
 
+  adminClient: Administrator = {
+    UserName: '',
+    Password: ''
+  }
+  adminServer: Administrator[] = [];
 
-  employees: Employee[] = [];
-  
   constructor(private databaseService: DatabaseService) { }
   
 
   ngOnInit(): void {
-    this.getEmployees();
+    
+  }
+
+  onClickSubmitBtn(){
+
   }
 
   async getEmployees(){
-    //To get data from database, match interface names with table names
-    this.databaseService.getAllEmployees().subscribe(employees => this.employees = employees);
+    //this.databaseService.getAllEmployees().subscribe(employees => this.employees = employees);
   }
 
 }

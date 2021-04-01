@@ -1,18 +1,22 @@
-let express = require('express');
-let cors = require("cors");
-const bodyParser= require('body-parser');
-let sql = require("mssql");
-let app = express();
+const express = require('express');
+const cors = require("cors");
+const bodyParser = require('body-parser');
+const db = require('./database/database.service');
+const app = express();
 
-app.use(cors());
+const errorHandler = require('./_helpers/error-handler');
+const basicAuth = require('./_helpers/auth');
+
+//Configurations ----------------------------------------------
+
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cors());
 
-let config = {
-        user: 'admin',
-        password: 'Proyecto-BD-1',
-        server: 'planillaobrera.cazk1jfc5xpu.us-east-2.rds.amazonaws.com', 
-        database: 'tarea_programada' 
-    };
+app.use(basicAuth);
+app.use('/users', require('./users/users.controller'));
+app.use(errorHandler);
+
 let port = 5000;
 
 app.listen(port, function () {
@@ -20,6 +24,11 @@ app.listen(port, function () {
 });
 
 // Gets--------------------------------------------------------
+
+// app.get('/', async (req, res) => {
+//     console.log(urs.users);
+//     res.send('API working');
+// })
 
 app.get('/getAllDepartments', async (req, res) => {
     await sql.connect(config);
@@ -30,6 +39,12 @@ app.get('/getAllDepartments', async (req, res) => {
 app.get('/getAllJobs', async (req, res) => {
     await sql.connect(config);
     const result = await sql.query('select * from dbo.Job');
+    res.send(result.recordset);
+})
+
+app.get('/getAllAdministrators', async (req, res) =>{
+    await sql.connect(config);
+    const result = await sql.query('select * from dbo.Administrators');
     res.send(result.recordset);
 })
 
