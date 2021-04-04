@@ -13,8 +13,7 @@ let config = {
 
 async function getAllAdministrators(){
     await sql.connect(config);
-    const result = await sql.query(`select * from dbo.Administrators`);
-    //console.log(result.recordset);
+    const result = await sql.query(`select * from dbo.Administrator`);
     return result.recordset;
 }
 

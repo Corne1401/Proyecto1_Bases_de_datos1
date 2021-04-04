@@ -1,0 +1,15 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/" routerLinkActive="active">Planilla Obrera</a>
+
+        <div class="navbar-nav me-auto">
+            <a class="nav-link" routerLink="/jobs">Jobs</a>
+            <a class="nav-link" routerLink="/employees">Employees</a>
+        </div>
+
+        <div class="navbar-nav ms-auto">
+            <a class="nav-link" (click)="logout()">Log Out</a>
+        </div>
+
+    </div>
+</nav>

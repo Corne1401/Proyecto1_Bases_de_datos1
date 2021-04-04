@@ -1,17 +1,29 @@
-<div class="container-fluid" >
-    <div id="logInForm">
-        <div class="mb-3">
-            <label for="userName" class="form-label">User</label>
-            <input id="UserName" [(ngModel)]="adminClient.UserName" class="form-control"  aria-describedby="userHelp">
-            <div id="userHelp" class="form-text">Please enter your user name above.</div>
-        </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" [(ngModel)]="adminClient.Password" class="form-control" id="password" aria-describedby="passwordHelp">
-            <div id="passwordHelp" class="form-text">Please enter yout password above.</div>
-        </div>
-        <div class="text-end">
-            <button type="submit" class="btn btn-primary" id="submitBtn" (click)="onClickSubmitBtn()">Log in</button>
+<app-navbar-out></app-navbar-out>
+<div class="col-md-6 offset-md-3 mt-5">
+    <div class="card">
+        <h4 class="card-header">Log In</h4>
+        <div class="card-body">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">Username is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                    </div>
+                </div>
+                <button [disabled]="loading" class="btn btn-primary" id="submitBtn">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Login
+                </button>
+                <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+            </form>
         </div>
     </div>
 </div>

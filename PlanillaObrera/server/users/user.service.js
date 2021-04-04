@@ -1,15 +1,14 @@
-const db = require('../database/database.service');
-
+const sql = require('../database/database.service')
 module.exports = {
     authenticate,
     getAll
 };
 
 async function authenticate({ username, password }) {
-    const users = await db.getAllAdministrators();
-    const user = users.find(u => u.UserName === username && u.Password === password);
-    if (user) {
-        const { password, ...userWithoutPassword } = user;
+    const admins = await sql.getAllAdministrators();
+    const admin = admins.find(u => u.username === username && u.password === password);
+    if (admin) {
+        const { password, ...userWithoutPassword } = admin;
         return userWithoutPassword;
     }
 }

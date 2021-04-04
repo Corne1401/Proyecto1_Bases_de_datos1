@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { Administrator } from '../Interfaces/Administrator';
-import { Employee } from '../Interfaces/Employee';
-import { ThrowStmt } from '@angular/compiler';
+import { Administrator } from '../_models/Administrator';
 
 @Injectable({
   providedIn: 'root'
@@ -19,10 +17,6 @@ export class DatabaseService {
 
   constructor(private http: HttpClient) {}
 //  Gets----------------------------------------------------
-  getAllEmployees(): Observable<Employee[]>{
-    return this.http.get<Employee[]>('http://localhost:5000/getAllEmployees');
-    
-  }
   getAllAdministrators(): Observable<Administrator[]>{
     return this.http.get<Administrator[]>('http://localhost:5000/getAll');
   }
