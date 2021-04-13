@@ -1,0 +1,20 @@
+<!--catalogos-->
+<Catalogos>
+<Tipos_de_Documento_de_Identidad>
+<TipoDocuIdentidad Id = "1" Nombre = "Cedula Nacional"/>
+<TipoDocuIdentidad Id = "2" Nombre = "Cedula Juridica"/>
+<TipoDocuIdentidad Id = "3" Nombre = "Pasaporte"/>
+<TipoDocuIdentidad Id = "4" Nombre = "Permiso de Trabajo"/>
+</Tipos_de_Documento_de_Identidad>
+<Puestos>
+<Puesto Id = "1" Nombre="Electricista" SalarioXHora = "1200"/>
+<Puesto Id = "2" Nombre="Auxiliar de laboratorio" SalarioXHora = "1250"/>
+<Puesto Id = "3" Nombre="Operador de maquina" SalarioXHora = "1025"/>
+</Puestos>
+<Departamentos>
+<Departamento Id = "1" Nombre = "Enlaminado"/>
+<Departamento Id = "2" Nombre = "Laboratorio"/>
+<Departamento Id = "3" Nombre = "Bodega de materiales"/>
+<Departamento Id = "4" Nombre = "Bodega de producto terminado"/>
+</Departamentos>
+</Catalogos>
