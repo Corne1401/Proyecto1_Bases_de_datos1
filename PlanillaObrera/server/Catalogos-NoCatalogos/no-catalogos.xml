@@ -1,0 +1,18 @@
+<Empleados>
+<Empleado
+    Nombre="Javier Rivera"
+    IdTipoIdentificacion ="3"
+    ValorDocumentoIdentificacion="123344555"
+    IdDepartamento="4"
+    Puesto = "Electricista"
+    FechaNacimiento ="2001-08-09"
+/>
+<Empleado
+    Nombre="Juanito Valderrama"
+    IdTipoIdentificacion ="4"
+    ValorDocumentoIdentificacion="123344555"
+    IdDepartamento="7"
+    Puesto = "Auxiliar de laboratorio"
+    FechaNacimiento ="1998-05-10"
+/>
+</Empleados>
