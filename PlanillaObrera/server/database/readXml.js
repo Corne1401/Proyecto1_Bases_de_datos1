@@ -1,5 +1,5 @@
 
-module.exports = {readCatalogs, readNonCatalogs}
+module.exports = {readCatalogs}
 
 const path = require('path');
 var database = require('./database.service');
@@ -11,49 +11,40 @@ var xml2js = require('xml2js');
 var xpath = require("xml2js-xpath");
 
 function readCatalogs(){
-
-  let xmlFile = fs.readFileSync(path.resolve('server/Catalogos-NoCatalogos/','catalogos.xml'), 'utf8').toString();
+  let xmlFile = fs.readFileSync(path.resolve('server/Catalogos-NoCatalogos/','CatalogoFinal1.xml'), 'utf8').toString();
   var parser = new xml2js.Parser();
   parser.parseString(xmlFile, function(err,result){
   
-    for(var key in result['Catalogos']['Tipos_de_Documento_de_Identidad'][0]['TipoDocuIdentidad'] ){
-      var name = result['Catalogos']['Tipos_de_Documento_de_Identidad'][0]['TipoDocuIdentidad'][key].$.Nombre;
-      var Id = result['Catalogos']['Tipos_de_Documento_de_Identidad'][0]['TipoDocuIdentidad'][key].$.Id;
+    for(var key in result['Datos']['Catalogos'][0]['Tipos_de_Documento_de_Identificacion'][0]['TipoIdDoc']){
+      var name = result['Datos']['Catalogos'][0]['Tipos_de_Documento_de_Identificacion'][0]['TipoIdDoc'][key].$.Nombre;
+      var Id = result['Datos']['Catalogos'][0]['Tipos_de_Documento_de_Identificacion'][0]['TipoIdDoc'][key].$.Id;
       //database.insertIdentityDocumentType(Id,name);
     }
-    for(var key in result['Catalogos']['Puestos'][0]['Puesto'] ){
-      var Id = result['Catalogos']['Puestos'][0]['Puesto'][key].$.Id;
-      var name = result['Catalogos']['Puestos'][0]['Puesto'][key].$.Nombre;
-      var salary = result['Catalogos']['Puestos'][0]['Puesto'][key].$.SalarioXHora;
+    
+    for(var key in result['Datos']['Catalogos'][0]['Puestos'][0]['Puesto'] ){
+      var Id = result['Datos']['Catalogos'][0]['Puestos'][0]['Puesto'][key].$.Id;
+      var name = result['Datos']['Catalogos'][0]['Puestos'][0]['Puesto'][key].$.Nombre;
+      var salary = result['Datos']['Catalogos'][0]['Puestos'][0]['Puesto'][key].$.SalarioXHora;
       //database.insertJob(Id,name,salary);
   }
-    for(var key in result['Catalogos']['Departamentos'][0]['Departamento'] ){
-      var name = result['Catalogos']['Departamentos'][0]['Departamento'][key].$.Nombre;
-      var Id = result['Catalogos']['Departamentos'][0]['Departamento'][key].$.Id;
+    for(var key in result['Datos']['Catalogos'][0]['Departamentos'][0]['Departamento'] ){
+      var name = result['Datos']['Catalogos'][0]['Departamentos'][0]['Departamento'][key].$.Nombre;
+      var Id = result['Datos']['Catalogos'][0]['Departamentos'][0]['Departamento'][key].$.Id;
       //database.insertDepartment(Id,name);
     }
+    /*
+    for(var key in result['Datos']['Empleados'][0]['Empleado']){
+      var name = result['Datos']['Empleados'][0]['Empleado'][key].$.Nombre;
+      var ValueDocumentId = result['Datos']['Empleados'][0]['Empleado'][key].$.ValorDocumentoIdentidad;
+      var IdDepartment = result['Datos']['Empleados'][0]['Empleado'][key].$.IdDepartamento;
+      var JobName = result['Datos']['Empleados'][0]['Empleado'][key].$.Puesto;
+      var BirthDay = result['Datos']['Empleados'][0]['Empleado'][key].$.FechaNacimiento;
+      console.log(BirthDay);
+      database.insertEmployee(name,ValueDocumentId,IdDepartment,JobName,BirthDay);
+    }
+    */
     
   });
 
-
-}
-
-function readNonCatalogs(){
-
-  let xmlFile = fs.readFileSync(path.resolve('server/Catalogos-NoCatalogos/','no-catalogos.xml'), 'utf8').toString();
-  var parser = new xml2js.Parser();
-  parser.parseString(xmlFile, function(err,result){
-    
-      for(var key in result['Empleados']['Empleado'][0]['Nombre'] ){
-      var name = result['Empleados']['Empleado'][0]['Nombre'][key].$.Nombre;
-      var Id = result['Empleados']['Empleado'][0]['Nombre'][key].$.Id;
-      var ValueDocumentId = result['Empleados']['Empleado'][0]['Nombre'][key].$.ValorDocumentoIdentificacion;
-      var IdDepartment = result['Empleados']['Empleado'][0]['Nombre'][key].$.IdDepartamento;
-      var JobName = result['Empleados']['Empleado'][0]['Nombre'][key].$.Puesto;
-      var BirthDay = result['Empleados']['Empleado'][0]['Nombre'][key].$.FechaNacimiento;
-      console.log(BirthDay);
-      database.insertEmployee(Id,name,ValueDocumentId,IdDepartment,JobName,BirthDay);
-      }
-    });
 
 }

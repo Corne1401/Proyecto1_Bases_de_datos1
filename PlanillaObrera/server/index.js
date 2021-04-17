@@ -22,7 +22,7 @@ app.use(errorHandler);
 
 //read Catalogs and no-Catalogs
 readCatalogs.readCatalogs();
-readCatalogs.readNonCatalogs();
+
 
 // start server
 const port = process.env.NODE_ENV === 'production' ? 80 : 4000;
