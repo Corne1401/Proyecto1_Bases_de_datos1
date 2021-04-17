@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+import { environment } from '../../environments/environment';
 import { Administrator } from '../_models/Administrator';
+import { Employee } from '../_models/Employee';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +29,8 @@ export class DatabaseService {
 
 
 //  Post----------------------------------------------------
-  validateAdministrator(admin: Administrator){
-    this.http.post('http://localhost:5000/adminAuth',admin).subscribe();
+  selectEmployees(search: string){
+    return this.http.post<Employee[]>(`${environment.apiUrl}/users/authenticate`, search).pipe()
   }
+
 }

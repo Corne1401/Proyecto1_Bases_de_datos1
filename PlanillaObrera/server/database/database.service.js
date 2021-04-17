@@ -1,4 +1,5 @@
-const sql = require('mssql')
+const sql = require('mssql');
+
 
 module.exports = {
     getAllAdministrators,
@@ -6,7 +7,9 @@ module.exports = {
     insertDepartment,
     insertIdentityDocumentType,
     insertEmployee,
+    selectEmployees
 }
+
 
 let config = {
     user: 'admin',
@@ -36,8 +39,13 @@ async function setJobSalary(){}
 
 //Employees-------------------------------------------
 async function getAllEmployees(){}
+async function selectEmployees(search){
+  await sql.connect(config);
+  const result = await sql.query(`exec selectEmployees @search=${search}`)
+  return result.recordset;
+}
 
-async function addNewEmployee(Id, Name, ValueDocumentId){}
+async function addNewEmployee(){}
 async function removeEmployee(){}
 
 async function setEmployeeName(){}
