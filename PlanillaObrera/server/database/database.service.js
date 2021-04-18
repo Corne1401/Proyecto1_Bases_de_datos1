@@ -112,11 +112,10 @@ function insertIdentityDocumentType(Id, Name){
     });      
 }
 
-function insertEmployee(Id, Name, ValueDocumentId,IdDepartment, JobName, BirthDay){
+function insertEmployee(Name, ValueDocumentId,IdDepartment, JobName, BirthDay){
     var conn = new sql.ConnectionPool(config);
     conn.connect().then(function(conn) {
       var request = new sql.Request(conn);
-      request.input('Id', sql.Int,Id);
       request.input('Name', sql.VarChar(128), Name);
       request.input('ValueDocumentId', sql.Int, ValueDocumentId);
       request.input('IdDepartment', sql.Int, IdDepartment);
