@@ -7,7 +7,8 @@ module.exports = {
     insertDepartment,
     insertIdentityDocumentType,
     insertEmployee,
-    selectEmployees
+    selectEmployees,
+    getAllEmployees
 }
 
 
@@ -38,7 +39,11 @@ async function setJobSalary(){}
 
 
 //Employees-------------------------------------------
-async function getAllEmployees(){}
+async function getAllEmployees(){
+  await sql.connect(config);
+  const result = await sql.query(`select * from dbo.Employees`);
+  return result.recordset;
+}
 async function selectEmployees(search){
   await sql.connect(config);
   const result = await sql.query(`exec selectEmployees @search=${search}`)
