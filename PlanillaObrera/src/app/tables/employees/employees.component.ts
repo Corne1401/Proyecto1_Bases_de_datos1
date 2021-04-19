@@ -30,22 +30,32 @@ export class EmployeesComponent implements OnInit {
   }
 
   findJob(Id: number){
-    return this.jobs.find(job => job.Id===Id).NameJob
+    try {
+      return this.jobs.find(job => job.Id===Id).NameJob
+    } catch (error) {
+      console.log(error)
+    }
+    
   }
 
   onSearch(): void{
-    this.databaseService.selectEmployees(this.searchForm).subscribe( employees => this.employees = employees);
+    if(this.searchForm === ''){
+      this.databaseService.getAllEmployees().subscribe(employees => this.employees = employees)
+    }else{
+      this.databaseService.selectEmployees(this.searchForm).subscribe( employees => this.employees = employees);
+    }
   }
 
   openEdit(employee: Employee): void{
     const dialogRef = this.dialog.open(EditEmployeeComponent, {
-      height: '400px',
+      height: '500px',
       width: '300px',
       data: employee
     });
 
     dialogRef.afterClosed().subscribe(result => {
       this.databaseService.editEmployee(result).subscribe();
+
       console.log("dialog closed");
     })
 
@@ -63,7 +73,7 @@ export class EmployeesComponent implements OnInit {
       ValueDocIdentity: null,
     };
     const dialogRef = this.dialog.open(EditEmployeeComponent,{
-      height: '400px',
+      height: '500px',
       width: '300px',
       data: newEmployee
     })
@@ -71,6 +81,7 @@ export class EmployeesComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(result!==undefined){
         this.databaseService.addEmployee(result).subscribe()
+
         //window.location.reload();
       }else{
         console.log("No data")
@@ -82,6 +93,7 @@ export class EmployeesComponent implements OnInit {
 
   deleteEmployee(Id: number): void{
     this.databaseService.deleteEmployee(Id).subscribe();
+
     //window.location.reload();
   }
 

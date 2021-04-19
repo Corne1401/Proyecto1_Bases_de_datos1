@@ -24,7 +24,7 @@ export class JobsComponent implements OnInit {
 
   openEdit(Job: Job): void{
     const dialogRef = this.dialog.open(EditJobComponent, {
-      height: '400px',
+      height: '320px',
       width: '300px',
       data: Job
     });
@@ -43,7 +43,7 @@ export class JobsComponent implements OnInit {
       Active: true
     }
     const dialogRef = this.dialog.open(EditJobComponent, {
-      height: '400px',
+      height: '320px',
       width: '300px',
       data: newJob
     });
