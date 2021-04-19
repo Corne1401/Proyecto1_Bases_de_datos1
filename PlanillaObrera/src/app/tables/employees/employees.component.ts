@@ -68,7 +68,13 @@ export class EmployeesComponent implements OnInit {
     })
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
+      if(result!==undefined){
+        this.databaseService.addEmployee(result).subscribe()
+        window.location.reload();
+      }else{
+        console.log("No data")
+      }
+      
     })
 
   }

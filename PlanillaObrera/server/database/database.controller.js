@@ -10,6 +10,8 @@ router.get('/getAllDepartments', getAllDepartments);
 router.get('/getAllIdentiryDocumentType', getAllIdentityDocumentType);
 //Post
 router.post('/selectEmployees', selectEmployees);
+router.post('/addEmployee', addEmployee)
+
 
 
 module.exports = router;
@@ -26,6 +28,10 @@ function getAllEmployees(req, res, next){
     .then(employees => employees ? res.json(employees) : res.status(404).json({message: "content not found"}))
 }
 
+function addEmployee(req, res, next){
+    console.log(req.body);
+    dbService.insertEmployee(req.body.Name, req.body.ValueDocumentId, req.body.IdDepartment, req.body.JobName, req.body.BirthDay)
+}
 
 //Jobs-------------------------------------------------------
 function getAllJobs(req, res, next){

@@ -41,9 +41,8 @@ export class DatabaseService {
     console.log(search);
     return this.http.post<Employee[]>(`${environment.apiUrl}/db/selectEmployees`, {search}).pipe()
   }
-
-  deleteEmployee(Id: number){
-    return this.http.post<Employee[]>(`${environment.apiUrl}/db/deleteEmployee`, {Id}).pipe()
+  addEmployee(employee: Employee){
+    console.log(employee);
+    return this.http.post<Employee>(`${environment.apiUrl}/db/addEmployee`,{employee}).pipe();
   }
-
 }

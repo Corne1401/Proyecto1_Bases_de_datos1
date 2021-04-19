@@ -17,9 +17,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let employee of this.employees">
-                    <th>{{employee.Name}}</th>
-                    <th>{{findJob(employee.IdJob)}}</th>
+                <tr *ngFor="let varEmployee of this.employees">
+                    <th>{{varEmployee.Name}}</th>
+                    <th>{{findJob(varEmployee.IdJob)}}</th>
                     <th>
                         <button mat-button [matMenuTriggerFor]="menu">Options</button>
                         <mat-menu #menu="matMenu">
