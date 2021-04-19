@@ -7,6 +7,10 @@ module.exports = {
     insertDepartment,
     insertIdentityDocumentType,
     insertEmployee,
+    editEmployee,
+    editJob,
+    deleteEmployee,
+    deleteJob,
     selectEmployees,
     getAllEmployees,
     getAllJobs,
@@ -141,7 +145,67 @@ function insertEmployee(Name,IdTypeDoc, ValueDocType,IdDepartment, IdJob, BirthD
       request.execute('dbo.spEmployee_InsertEmployee').
       then(function(err, recordsets, returnValue, affected) {
       }).catch(function(err) {
-        console.log(err)
       });
     });      
+}
+//Ediciones-----------------------------------------
+
+function editEmployee(Id,Name,IdTypeDoc, ValueDocType,IdDepartment, IdJob, BirthDay){
+  var conn = new sql.ConnectionPool(config);
+  conn.connect().then(function(conn) {
+    var request = new sql.Request(conn);
+    request.input('Name', sql.Int, Id);
+    request.input('Name', sql.VarChar(128), Name);
+    request.input('IdTypeDoc', sql.Int, IdTypeDoc);
+    request.input('ValueDocType', sql.Int, ValueDocType);
+    request.input('IdDepartment', sql.Int, IdDepartment);
+    request.input('IdJob', sql.Int, IdJob);
+    request.input('BirthDay', sql.Date, BirthDay);
+    request.execute('dbo.spEmployees_EditEmployee').
+    then(function(err, recordsets, returnValue, affected) {
+    }).catch(function(err) {
+    });
+  });      
+}
+
+function editJob(){
+  var conn = new sql.ConnectionPool(config);
+  conn.connect().then(function(conn) {
+    var request = new sql.Request(conn);
+    request.input('Id', sql.Int,Id);
+    request.input('NameJob', sql.VarChar(256), Namejob);
+    request.input('SalaryXHour', sql.Int, SalaryXHour);
+    request.execute('dbo.spJobs_EditJob').
+    then(function(err, recordsets, returnValue, affected) {
+    }).catch(function(err) {
+      
+    });
+  });      
+}
+
+//Deletes-----------------------------------------------
+
+function deleteEmployee(Id){
+  var conn = new sql.ConnectionPool(config);
+  conn.connect().then(function(conn) {
+    var request = new sql.Request(conn);
+    request.input('Id', sql.Int, Id);
+    request.execute('dbo.spEmployees_DeleteEmployee').
+    then(function(err, recordsets, returnValue, affected) {
+    }).catch(function(err) {
+    });
+  });      
+}
+
+function deleteJob(Id){
+  var conn = new sql.ConnectionPool(config);
+  conn.connect().then(function(conn) {
+    var request = new sql.Request(conn);
+    request.input('Id', sql.Int, Id);
+    request.execute('dbo.spJobs_DeleteJob').
+    then(function(err, recordsets, returnValue, affected) {
+    }).catch(function(err) {
+    });
+  });      
+
 }
