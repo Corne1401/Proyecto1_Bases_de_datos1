@@ -29,8 +29,8 @@ function getAllEmployees(req, res, next){
 }
 
 function addEmployee(req, res, next){
-    console.log(req.body);
-    dbService.insertEmployee(req.body.Name, req.body.ValueDocumentId, req.body.IdDepartment, req.body.JobName, req.body.BirthDay)
+    console.log(req.body.Name);
+    //dbService.insertEmployee(req.body.Name, req.body.IdTypeDoc, req.body.ValueDocType, req.body.IdDepartment, req.body.IdJob, req.body.BirthDay)
 }
 
 //Jobs-------------------------------------------------------
