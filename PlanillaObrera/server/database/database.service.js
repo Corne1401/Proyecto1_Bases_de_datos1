@@ -95,7 +95,7 @@ function insertJob(Id, Namejob, SalaryXHour){
       request.execute('dbo.spJobs_InsertJob').
       then(function(err, recordsets, returnValue, affected) {
       }).catch(function(err) {
-        
+        console.log(err)
       });
     });      
 }
@@ -109,6 +109,7 @@ function insertDepartment(Id, Name){
       request.execute('dbo.spDepartment_InsertDepartment').
       then(function(err, recordsets, returnValue, affected) {
       }).catch(function(err) {
+        console.log(err)
       });
     });      
 }
@@ -122,6 +123,7 @@ function insertIdentityDocumentType(Id, Name){
       request.execute('dbo.spIdentityDocumentType_InsertDocumentType').
       then(function(err, recordsets, returnValue, affected) {
       }).catch(function(err) {
+        console.log(err)
       });
     });      
 }
@@ -140,6 +142,7 @@ function insertEmployee(Name,IdTypeDoc, ValueDocType,IdDepartment, IdJob, BirthD
       request.execute('dbo.spEmployee_InsertEmployee').
       then(function(err, recordsets, returnValue, affected) {
       }).catch(function(err) {
+        console.log(err)
       });
     });      
 }
