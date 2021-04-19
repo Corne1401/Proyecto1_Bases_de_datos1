@@ -44,7 +44,10 @@ export class DatabaseService {
   }
   addEmployee(employee: Employee){
     console.log(employee);
-    return this.http.post<Employee>(`${environment.apiUrl}/db/addEmployee`,employee).pipe();
+    return this.http.post<any>(`${environment.apiUrl}/db/addEmployee`,employee).pipe();
+  }
+  addJob(job: Job){
+    return this.http.post<any>(`${environment.apiUrl}/db/addJob`, job).pipe();
   }
   deleteEmployee(Id: number){
     return this.http.post<any>(`${environment.apiUrl}/db/deleteEmployee`,{Id}).pipe();
@@ -55,5 +58,7 @@ export class DatabaseService {
   editEmployee(employee: Employee){
     return this.http.post<any>(`${environment.apiUrl}/db/editEmployee`,employee).pipe();
   }
-
+  editJob(job: Job){
+    return this.http.post<any>(`${environment.apiUrl}/db/editJob`,job).pipe();
+  }
 }

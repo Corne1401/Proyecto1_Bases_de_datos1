@@ -10,10 +10,12 @@ router.get('/getAllDepartments', getAllDepartments);
 router.get('/getAllIdentiryDocumentType', getAllIdentityDocumentType);
 //Post
 router.post('/selectEmployees', selectEmployees);
-router.post('/addEmployee', addEmployee)
-router.post('/deleteEmployee', deleteEmployee)
-router.post('/deleteJob', deleteJob)
-router.post('/editEmployee', editEmployee)
+router.post('/addEmployee', addEmployee);
+router.post('/addJob', addJob);
+router.post('/deleteEmployee', deleteEmployee);
+router.post('/deleteJob', deleteJob);
+router.post('/editEmployee', editEmployee);
+router.post('/editJob', editJob);
 
 
 
@@ -56,6 +58,13 @@ function deleteJob(req, res, next){
     dbService.deleteJob(req.body.Id);
 }
 
+function addJob(req,res,next){
+    dbService.insertJob(req.body.Id, req.body.NameJob, req.body.SalaryXHour);
+}
+
+function editJob(req, res, next){
+    dbService.editJob(req.body.Id, req.body.NameJob, req.body.SalaryXHour)
+}
 
 //Department-------------------------------------------------
 

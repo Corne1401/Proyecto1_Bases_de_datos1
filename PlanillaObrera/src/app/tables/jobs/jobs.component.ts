@@ -30,15 +30,34 @@ export class JobsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      this.databaseService.editJob(result).subscribe();
       console.log("dialog closed");
     })
   }
 
   addJob(): void{
+    let newJob: Job = {
+      Id: null,
+      NameJob: '',
+      SalaryXHour: null,
+      Active: true
+    }
     const dialogRef = this.dialog.open(EditJobComponent, {
       height: '400px',
       width: '300px',
+      data: newJob
     });
+
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result!==undefined){
+        this.databaseService.addJob(result).subscribe()
+        //window.location.reload();
+      }else{
+        console.log("No data")
+      }
+      
+    })
   }
 
   deleteJob(Id: number): void{

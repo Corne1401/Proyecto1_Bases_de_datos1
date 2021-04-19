@@ -1,17 +1,25 @@
 <div class="container-fluid">
-    <h1 *ngIf="data; else addTitle" mat-dialog-title>Edit Job: {{data.Id}}</h1>
+    <h1 *ngIf="data.Id===null; else addTitle" mat-dialog-title>Edit Job: {{data.Id}}</h1>
     <ng-template #addTitle><h1>Add Job</h1></ng-template>
+    
+    <mat-form-field>
+        <mat-label>Jod Id</mat-label>
+        <input type="number" matInput [(ngModel)]="data.Id">
+    </mat-form-field>
+    
     <mat-form-field>
         <mat-label>Job Name</mat-label>
-        <input matInput #jobName maxlength="40">
+        <input matInput #jobName maxlength="40" [(ngModel)]="data.NameJob">
         <mat-hint align="end">{{jobName.value.length}} / 40</mat-hint>
     </mat-form-field>
 
     <mat-form-field>
         <mat-label>Salary per hour</mat-label>
-        <input type="number" matInput>
+        <input type="number" matInput [(ngModel)]="data.SalaryXHour">
     </mat-form-field>
 </div>
 
-<button mat-button (click)="onNoClick()">Cancel</button> 
-<button mat-button (click)="onNoClick()">Ok</button> 
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button> 
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button> 
+</div>

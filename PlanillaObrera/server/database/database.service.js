@@ -35,7 +35,7 @@ async function getAllAdministrators(){
 //Jobs------------------------------------------------
 async function getAllJobs(){
   await sql.connect(config);
-  const result = await sql.query(`select * from dbo.Job`);
+  const result = await sql.query(`select * from dbo.Job where Active=1`);
   return result.recordset;
 }
 
@@ -168,12 +168,12 @@ function editEmployee(Id,Name,IdTypeDoc, ValueDocType,IdDepartment, IdJob, Birth
   });      
 }
 
-function editJob(){
+function editJob(Id, NameJob, SalaryXHour){
   var conn = new sql.ConnectionPool(config);
   conn.connect().then(function(conn) {
     var request = new sql.Request(conn);
     request.input('Id', sql.Int,Id);
-    request.input('NameJob', sql.VarChar(256), Namejob);
+    request.input('NameJob', sql.VarChar(256), NameJob);
     request.input('SalaryXHour', sql.Int, SalaryXHour);
     request.execute('dbo.spJobs_EditJob').
     then(function(err, recordsets, returnValue, affected) {
