@@ -12,7 +12,9 @@ router.get('/getAllIdentiryDocumentType', getAllIdentityDocumentType);
 router.post('/selectEmployees', selectEmployees);
 router.post('/addEmployee', addEmployee)
 router.post('/deleteEmployee', deleteEmployee)
+router.post('/deleteJob', deleteJob)
 router.post('/editEmployee', editEmployee)
+
 
 
 
@@ -48,6 +50,10 @@ function editEmployee(req, res, next){
 function getAllJobs(req, res, next){
     dbService.getAllJobs()
     .then(Jobs => Jobs ? res.json(Jobs) : res.status(404).json({message: "content not found"}))
+}
+
+function deleteJob(req, res, next){
+    dbService.deleteJob(req.body.Id);
 }
 
 

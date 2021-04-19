@@ -95,7 +95,7 @@ function insertJob(Id, Namejob, SalaryXHour){
       request.execute('dbo.spJobs_InsertJob').
       then(function(err, recordsets, returnValue, affected) {
       }).catch(function(err) {
-        
+        console.log(err)
       });
     });      
 }
@@ -140,6 +140,7 @@ function insertEmployee(Name,IdTypeDoc, ValueDocType,IdDepartment, IdJob, BirthD
       request.execute('dbo.spEmployee_InsertEmployee').
       then(function(err, recordsets, returnValue, affected) {
       }).catch(function(err) {
+        console.log(err)
       });
     });      
 }
@@ -175,7 +176,7 @@ function editJob(){
     request.execute('dbo.spJobs_EditJob').
     then(function(err, recordsets, returnValue, affected) {
     }).catch(function(err) {
-      
+      console.log(err)
     });
   });      
 }
@@ -202,6 +203,7 @@ function deleteJob(Id){
     request.execute('dbo.spJobs_DeleteJob').
     then(function(err, recordsets, returnValue, affected) {
     }).catch(function(err) {
+      console.log(err)
     });
   });      
 

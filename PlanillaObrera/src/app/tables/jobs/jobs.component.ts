@@ -40,4 +40,9 @@ export class JobsComponent implements OnInit {
       width: '300px',
     });
   }
+
+  deleteJob(Id: number): void{
+    this.databaseService.deleteJob(Id).subscribe()
+  }
+
 }
