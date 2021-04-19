@@ -47,7 +47,7 @@ function readCatalogs(){
       var username = result['Datos']['Usuarios'][0]['Usuario'][key].$.username;
       var pwd = result['Datos']['Usuarios'][0]['Usuario'][key].$.pwd;
       var type = result['Datos']['Usuarios'][0]['Usuario'][key].$.tipo;
-      database.insertUser(username, pwd); 
+      database.insertUser(username, pwd,key+1); 
     }
     
   });
