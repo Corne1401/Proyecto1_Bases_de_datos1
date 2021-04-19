@@ -109,6 +109,7 @@ function insertDepartment(Id, Name){
       request.execute('dbo.spDepartment_InsertDepartment').
       then(function(err, recordsets, returnValue, affected) {
       }).catch(function(err) {
+        console.log(err)
       });
     });      
 }
@@ -122,6 +123,7 @@ function insertIdentityDocumentType(Id, Name){
       request.execute('dbo.spIdentityDocumentType_InsertDocumentType').
       then(function(err, recordsets, returnValue, affected) {
       }).catch(function(err) {
+        console.log(err)
       });
     });      
 }
