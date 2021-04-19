@@ -40,7 +40,7 @@ function readCatalogs(){
       var IdDepartment = result['Datos']['Empleados'][0]['Empleado'][key].$.IdDepartamento;
       var IdJob = result['Datos']['Empleados'][0]['Empleado'][key].$.idPuesto;
       var BirthDay = result['Datos']['Empleados'][0]['Empleado'][key].$.FechaNacimiento;
-      console.log(IdDepartment);
+  
       database.insertEmployee(name,IdTypeDoc,ValueDocType,IdDepartment,IdJob,BirthDay); 
     }
     

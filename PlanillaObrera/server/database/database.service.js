@@ -141,6 +141,7 @@ function insertEmployee(Name,IdTypeDoc, ValueDocType,IdDepartment, IdJob, BirthD
       request.execute('dbo.spEmployee_InsertEmployee').
       then(function(err, recordsets, returnValue, affected) {
       }).catch(function(err) {
+        console.log(err)
       });
     });      
 }

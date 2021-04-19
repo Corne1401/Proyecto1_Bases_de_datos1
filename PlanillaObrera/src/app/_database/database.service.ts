@@ -43,6 +43,6 @@ export class DatabaseService {
   }
   addEmployee(employee: Employee){
     console.log(employee);
-    return this.http.post<Employee>(`${environment.apiUrl}/db/addEmployee`,{employee}).pipe();
+    return this.http.post<Employee>(`${environment.apiUrl}/db/addEmployee`,employee).pipe();
   }
 }
