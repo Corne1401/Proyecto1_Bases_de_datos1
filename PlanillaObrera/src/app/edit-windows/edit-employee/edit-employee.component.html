@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <h1 mat-dialog-title>Edit Employee: {{data.Id}}</h1>
+    <mat-form-field> <!--Nombre del empleado-->
+        <mat-label>Name</mat-label>
+        <input type="text"  matInput>
+        
+    </mat-form-field>
+    
+    <mat-form-field> <!--Tipo de documento-->
+        <mat-label>Document Type</mat-label>
+        <mat-select>
+            <mat-option value="one">One</mat-option>
+            <mat-option value="two">Two</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field> <!--Valor de documento-->
+        <mat-label>Document Value</mat-label>
+        <input type="text" matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>BirthDay</mat-label>
+        <input type="text" placeholder="yy-mm-dd" matInput>
+    </mat-form-field>
+
+    <mat-form-field> <!--Puesto-->
+        <mat-label>Job</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let job of this.Jobs" [value]="job.Id">
+                {{job.NameJob}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field> <!--Departamento-->
+        <mat-label>Department</mat-label>
+        <mat-select>
+            <mat-option value="one">One</mat-option>
+            <mat-option value="two">Two</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+</div>
+
+<button mat-button (click)="onNoClick()">No Thanks</button> 
+<button mat-button (click)="onNoClick()">Ok</button> 
+

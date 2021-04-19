@@ -8,7 +8,8 @@ module.exports = {
     insertIdentityDocumentType,
     insertEmployee,
     selectEmployees,
-    getAllEmployees
+    getAllEmployees,
+    getAllJobs
 }
 
 
@@ -25,7 +26,11 @@ async function getAllAdministrators(req, res,next){
     return result.recordset;
 }
 //Jobs------------------------------------------------
-async function getAllJobs(){}
+async function getAllJobs(){
+  await sql.connect(config);
+  const result = await sql.query(`select * from dbo.Job`);
+  return result.recordset;
+}
 
 async function addNewJob(){}
 async function removeJob(){}
@@ -41,12 +46,12 @@ async function setJobSalary(){}
 //Employees-------------------------------------------
 async function getAllEmployees(){
   await sql.connect(config);
-  const result = await sql.query(`select * from dbo.Employees`);
+  const result = await sql.query(`select * from dbo.Employees order by name`);
   return result.recordset;
 }
 async function selectEmployees(search){
   await sql.connect(config);
-  const result = await sql.query(`exec selectEmployees @search=${search}`)
+  const result = await sql.query(`exec spEmployees_selectEmployees @search=${search}`)
   return result.recordset;
 }
 

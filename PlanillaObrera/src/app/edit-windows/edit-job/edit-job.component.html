@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <h1 mat-dialog-title>Edit Job: {{data.Id}}</h1>
+    <mat-form-field>
+        <mat-label>Job Name</mat-label>
+        <input matInput #jobName maxlength="40">
+        <mat-hint align="end">{{jobName.value.length}} / 40</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Salary per hour</mat-label>
+        <input type="number" matInput>
+    </mat-form-field>
+</div>
+
+<button mat-button (click)="onNoClick()">No Thanks</button> 
+<button mat-button (click)="onNoClick()">Ok</button> 
