@@ -7,6 +7,7 @@ import { Job } from '../_models/Job';
 import { Employee } from '../_models/Employee';
 import { Department } from '../_models/Department';
 import { IdentityDocumentType } from '../_models/IdentityDocumentType';
+import { ThrowStmt } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +48,9 @@ export class DatabaseService {
   }
   deleteEmployee(Id: number){
     return this.http.post<any>(`${environment.apiUrl}/db/deleteEmployee`,{Id}).pipe();
+  }
+  editEmployee(employee: Employee){
+    return this.http.post<any>(`${environment.apiUrl}/db/editEmployee`,employee).pipe();
   }
 
 }

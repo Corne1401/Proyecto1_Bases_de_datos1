@@ -16,7 +16,7 @@ module.exports = {
     getAllJobs,
     getAllDepartments,
     getAllIdentityDocumentType,
-    removeEmployee
+    deleteEmployee
 }
 
 
@@ -60,11 +60,6 @@ async function selectEmployees(search){
   await sql.connect(config);
   const result = await sql.query(`exec spEmployees_selectEmployees @search=${search}`)
   return result.recordset;
-}
-
-async function removeEmployee(Id){
-  await sql.connect(config);
-  const result = await sql.query(`exec spEmployees_DeleteEmployee @Id=${Id}`);
 }
 
 async function setEmployeeName(){}
@@ -151,19 +146,21 @@ function insertEmployee(Name,IdTypeDoc, ValueDocType,IdDepartment, IdJob, BirthD
 //Ediciones-----------------------------------------
 
 function editEmployee(Id,Name,IdTypeDoc, ValueDocType,IdDepartment, IdJob, BirthDay){
+  console.log(ValueDocType)
   var conn = new sql.ConnectionPool(config);
   conn.connect().then(function(conn) {
     var request = new sql.Request(conn);
-    request.input('Name', sql.Int, Id);
+    request.input('Id', sql.Int, Id);
     request.input('Name', sql.VarChar(128), Name);
     request.input('IdTypeDoc', sql.Int, IdTypeDoc);
-    request.input('ValueDocType', sql.Int, ValueDocType);
+    request.input('ValueDocIdentity', sql.Int, ValueDocType);
     request.input('IdDepartment', sql.Int, IdDepartment);
     request.input('IdJob', sql.Int, IdJob);
     request.input('BirthDay', sql.Date, BirthDay);
     request.execute('dbo.spEmployees_EditEmployee').
     then(function(err, recordsets, returnValue, affected) {
     }).catch(function(err) {
+      console.log(err)
     });
   });      
 }
