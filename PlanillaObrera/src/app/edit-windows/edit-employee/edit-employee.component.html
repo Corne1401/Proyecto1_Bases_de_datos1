@@ -1,6 +1,7 @@
 <div class="container-fluid">
     <h1 *ngIf="data.Id===null; else addTitle" mat-dialog-title>Add Employee </h1>
     <ng-template #addTitle><h1 mat-dialog-title>Edit Employee: {{data.Id}}</h1></ng-template>
+
     <mat-form-field> <!--Nombre del empleado-->
         <mat-label>Name</mat-label>
         <input type="text"  matInput [(ngModel)]="data.Name">
@@ -9,7 +10,7 @@
     
     <mat-form-field> <!--Tipo de documento-->
         <mat-label>Document Type</mat-label>
-        <mat-select>
+        <mat-select [(value)]="data.IdTypeDoc">
             <mat-option *ngFor="let idDocType of this.IdDocTypes" [value]="idDocType.Id">
                 {{idDocType.Name}}
             </mat-option>
@@ -18,17 +19,17 @@
 
     <mat-form-field> <!--Valor de documento-->
         <mat-label>Document Value</mat-label>
-        <input type="text" matInput>
+        <input type="number" matInput [(ngModel)]="data.ValueDocIdentity">
     </mat-form-field>
 
     <mat-form-field>
         <mat-label>BirthDay</mat-label>
-        <input type="text" placeholder="yy-mm-dd" matInput>
+        <input type="text" placeholder="yy-mm-dd" matInput [(ngModel)]="data.BirthDay">
     </mat-form-field>
 
     <mat-form-field> <!--Puesto-->
         <mat-label>Job</mat-label>
-        <mat-select>
+        <mat-select [(value)]="data.IdJob">
             <mat-option *ngFor="let job of this.Jobs" [value]="job.Id">
                 {{job.NameJob}}
             </mat-option>
@@ -37,7 +38,7 @@
 
     <mat-form-field> <!--Departamento-->
         <mat-label>Department</mat-label>
-        <mat-select>
+        <mat-select [(value)]="data.IdDepartment">
             <mat-option *ngFor="let department of this.Departments" [value]="department.Id">
                 {{department.Name}}
             </mat-option>
@@ -47,5 +48,5 @@
 </div>
 
 <button mat-button (click)="onNoClick()">Cancel</button> 
-<button mat-button (click)="onNoClick()">Ok</button> 
+<button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button> 
 

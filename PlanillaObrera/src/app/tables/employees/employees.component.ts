@@ -4,6 +4,7 @@ import { MatDialog, MatDialogRef} from '@angular/material/dialog';
 import { Employee } from '../../_models/Employee';
 import { EditEmployeeComponent } from '../../edit-windows/edit-employee/edit-employee.component'
 import { DatabaseService } from '../../_database/database.service'
+import { Job } from 'src/app/_models/Job';
 
 
 @Component({
@@ -15,15 +16,7 @@ export class EmployeesComponent implements OnInit {
 
   searchForm: string;
   employees: Employee[] = [];
-  // newEmployee: Employee = {
-  //   Id: null,
-  //   Name: '',
-  //   ValueDocumentId: null,
-  //   IdDepartment: null,
-  //   JobName: '',
-  //   BirthDay: '',
-  //   Available: true
-  // };
+  jobs: Job[] = [];
 
   constructor(
     private databaseService: DatabaseService,
@@ -32,6 +25,12 @@ export class EmployeesComponent implements OnInit {
 
   ngOnInit(): void {
     this.databaseService.getAllEmployees().subscribe(employees => this.employees = employees)
+    this.databaseService.getAllJobs().subscribe(jobs => this.jobs = jobs)
+
+  }
+
+  findJob(Id: number){
+    return this.jobs.find(job => job.Id===Id).NameJob
   }
 
   onSearch(): void{
@@ -52,13 +51,25 @@ export class EmployeesComponent implements OnInit {
   }
 
   addEmployee(): void{
+    let newEmployee: Employee = {
+      Id: null,
+      Name: '',
+      IdTypeDoc: null,
+      IdDepartment: null,
+      IdJob: null,
+      BirthDay: '',
+      Active: true,
+      ValueDocIdentity: null,
+    };
     const dialogRef = this.dialog.open(EditEmployeeComponent,{
       height: '400px',
       width: '300px',
-      data: null
+      data: newEmployee
     })
 
-    // dialogRef.afterClosed().subscribe(result => this.newEmployee = result)
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    })
 
   }
 

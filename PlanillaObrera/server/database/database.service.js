@@ -48,7 +48,7 @@ async function setJobSalary(){}
 //Employees-------------------------------------------
 async function getAllEmployees(){
   await sql.connect(config);
-  const result = await sql.query(`select * from dbo.Employees order by name`);
+  const result = await sql.query(`select * from dbo.Employees where Active=1 order by name`);
   return result.recordset;
 }
 async function selectEmployees(search){
