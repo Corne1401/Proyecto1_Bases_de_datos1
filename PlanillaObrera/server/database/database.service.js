@@ -135,14 +135,15 @@ function insertIdentityDocumentType(Id, Name){
     });      
 }
 
-function insertEmployee(Name, ValueDocumentId,IdDepartment, JobName, BirthDay){
+function insertEmployee(Name,IdTypeDoc, ValueDocType,IdDepartment, IdJob, BirthDay){
     var conn = new sql.ConnectionPool(config);
     conn.connect().then(function(conn) {
       var request = new sql.Request(conn);
       request.input('Name', sql.VarChar(128), Name);
-      request.input('ValueDocumentId', sql.Int, ValueDocumentId);
+      request.input('IdTypeDoc', sql.Int, IdTypeDoc);
+      request.input('ValueDocType', sql.Int, ValueDocType);
       request.input('IdDepartment', sql.Int, IdDepartment);
-      request.input('JobName', sql.VarChar(256), JobName);
+      request.input('IdJob', sql.Int, IdJob);
       request.input('BirthDay', sql.Date, BirthDay);
       request.input('Active', sql.Bit, 1);
       request.execute('dbo.spEmployee_InsertEmployee').
