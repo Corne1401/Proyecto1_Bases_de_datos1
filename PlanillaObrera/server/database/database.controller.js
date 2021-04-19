@@ -11,6 +11,7 @@ router.get('/getAllIdentiryDocumentType', getAllIdentityDocumentType);
 //Post
 router.post('/selectEmployees', selectEmployees);
 router.post('/addEmployee', addEmployee)
+router.post('/deleteEmployee', deleteEmployee)
 
 
 
@@ -31,6 +32,11 @@ function getAllEmployees(req, res, next){
 function addEmployee(req, res, next){
     console.log(req.body);
     dbService.insertEmployee(req.body.Name, req.body.IdTypeDoc, req.body.ValueDocIdentity, req.body.IdDepartment, req.body.IdJob, req.body.BirthDay)
+}
+
+function deleteEmployee(req, res, next){
+    console.log(req.body.Id);
+    dbService.removeEmployee(req.body.Id)
 }
 
 //Jobs-------------------------------------------------------

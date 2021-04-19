@@ -11,7 +11,8 @@ module.exports = {
     getAllEmployees,
     getAllJobs,
     getAllDepartments,
-    getAllIdentityDocumentType
+    getAllIdentityDocumentType,
+    removeEmployee
 }
 
 
@@ -57,10 +58,9 @@ async function selectEmployees(search){
   return result.recordset;
 }
 
-async function addNewEmployee(){}
 async function removeEmployee(Id){
   await sql.connect(config);
-  await sql.query(`update dbo.Employees set Active=0 where Id=${Id}`)
+  const result = await sql.query(`exec spEmployees_DeleteEmployee @Id=${Id}`);
 }
 
 async function setEmployeeName(){}

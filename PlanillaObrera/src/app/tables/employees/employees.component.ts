@@ -70,7 +70,7 @@ export class EmployeesComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(result!==undefined){
         this.databaseService.addEmployee(result).subscribe()
-        //window.location.reload();
+        window.location.reload();
       }else{
         console.log("No data")
       }
@@ -79,8 +79,9 @@ export class EmployeesComponent implements OnInit {
 
   }
 
-  // deleteEmployee(Id: number): void{
-  //   this.databaseService.deleteEmployee(Id).subscribe( employees => this.employees = employees);
-  // }
+  deleteEmployee(Id: number): void{
+    this.databaseService.deleteEmployee(Id).subscribe();
+    window.location.reload();
+  }
 
 }
