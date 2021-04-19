@@ -6,6 +6,8 @@ const dbService = require('./database.service');
 //gets
 router.get('/getAllEmployees', getAllEmployees);
 router.get('/getAllJobs', getAllJobs);
+router.get('/getAllDepartments', getAllDepartments);
+router.get('/getAllIdentiryDocumentType', getAllIdentityDocumentType);
 //Post
 router.post('/selectEmployees', selectEmployees);
 
@@ -29,4 +31,19 @@ function getAllEmployees(req, res, next){
 function getAllJobs(req, res, next){
     dbService.getAllJobs()
     .then(Jobs => Jobs ? res.json(Jobs) : res.status(404).json({message: "content not found"}))
+}
+
+
+//Department-------------------------------------------------
+
+function getAllDepartments(req, res, next){
+    dbService.getAllDepartments()
+    .then(Department => Department ? res.json(Department) : res.status(404).json({message: "content not found"}))
+}
+
+//IdentityDocumentType---------------------------------------
+
+function getAllIdentityDocumentType(req, res, next){
+    dbService.getAllIdentityDocumentType()
+    .then(IdDocType => IdDocType ? res.json(IdDocType) : res.status(404).json({message: "content not found"}))
 }

@@ -1,9 +1,10 @@
 export interface Employee {
     Id: number;
     Name: string;
-    ValueDocumentId: number;
+    IdTypeDoc: number;
     IdDepartment: number;
-    JobName: string;
+    IdJob: number;
     BirthDay: string;
-    Available: boolean;
+    Active: boolean;
+    ValueDocIdentity: number;
 }

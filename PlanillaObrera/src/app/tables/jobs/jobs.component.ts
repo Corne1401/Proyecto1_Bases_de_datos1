@@ -33,4 +33,11 @@ export class JobsComponent implements OnInit {
       console.log("dialog closed");
     })
   }
+
+  addJob(): void{
+    const dialogRef = this.dialog.open(EditJobComponent, {
+      height: '400px',
+      width: '300px',
+    });
+  }
 }

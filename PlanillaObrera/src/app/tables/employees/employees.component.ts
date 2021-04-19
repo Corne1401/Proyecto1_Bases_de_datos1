@@ -15,6 +15,15 @@ export class EmployeesComponent implements OnInit {
 
   searchForm: string;
   employees: Employee[] = [];
+  // newEmployee: Employee = {
+  //   Id: null,
+  //   Name: '',
+  //   ValueDocumentId: null,
+  //   IdDepartment: null,
+  //   JobName: '',
+  //   BirthDay: '',
+  //   Available: true
+  // };
 
   constructor(
     private databaseService: DatabaseService,
@@ -41,4 +50,20 @@ export class EmployeesComponent implements OnInit {
     })
 
   }
+
+  addEmployee(): void{
+    const dialogRef = this.dialog.open(EditEmployeeComponent,{
+      height: '400px',
+      width: '300px',
+      data: null
+    })
+
+    // dialogRef.afterClosed().subscribe(result => this.newEmployee = result)
+
+  }
+
+  // deleteEmployee(Id: number): void{
+  //   this.databaseService.deleteEmployee(Id).subscribe( employees => this.employees = employees);
+  // }
+
 }

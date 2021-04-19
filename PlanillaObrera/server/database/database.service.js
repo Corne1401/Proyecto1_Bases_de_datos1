@@ -9,7 +9,9 @@ module.exports = {
     insertEmployee,
     selectEmployees,
     getAllEmployees,
-    getAllJobs
+    getAllJobs,
+    getAllDepartments,
+    getAllIdentityDocumentType
 }
 
 
@@ -20,7 +22,7 @@ let config = {
     database: 'tarea_programada' 
 };
 
-async function getAllAdministrators(req, res,next){
+async function getAllAdministrators(){
     await sql.connect(config);
     const result = await sql.query(`select * from dbo.Administrator`);
     return result.recordset;
@@ -56,7 +58,10 @@ async function selectEmployees(search){
 }
 
 async function addNewEmployee(){}
-async function removeEmployee(){}
+async function removeEmployee(Id){
+  await sql.connect(config);
+  await sql.query(`update dbo.Employees set Active=0 where Id=${Id}`)
+}
 
 async function setEmployeeName(){}
 async function setEmployeeIdType(){}
@@ -64,6 +69,19 @@ async function setEmployeeValueDocumentId(){}
 async function setEmployeeBirthDay(){}
 async function setEmployeeJob(){}
 async function setEmployeeIdDepartment(){}
+
+//Departments---------------------------------------
+async function getAllDepartments(){
+  await sql.connect(config);
+  const result = await sql.query(`select * from dbo.Department`)
+  return result.recordset
+}
+//IdentityDocumentType------------------------------
+async function getAllIdentityDocumentType(){
+  await sql.connect(config);
+  const result = await sql.query(`select * from dbo.IdentityDocumentType`);
+  return result.recordset
+}
 
 
 

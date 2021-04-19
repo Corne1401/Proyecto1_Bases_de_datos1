@@ -2,6 +2,8 @@ import { Component, Inject ,OnInit} from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 import { DatabaseService } from 'src/app/_database/database.service';
+import { Department } from 'src/app/_models/Department';
+import { IdentityDocumentType } from 'src/app/_models/IdentityDocumentType';
 import { Employee } from '../../_models/Employee';
 import { Job } from '../../_models/Job';
 
@@ -13,6 +15,8 @@ import { Job } from '../../_models/Job';
 export class EditEmployeeComponent implements OnInit{
 
   Jobs: Job[] = []
+  Departments: Department[] = []
+  IdDocTypes: IdentityDocumentType[] = []
 
   constructor(
     private databaseService: DatabaseService,
@@ -23,7 +27,8 @@ export class EditEmployeeComponent implements OnInit{
     this.dialogRef.close();
   }
   ngOnInit(){
-    console.log(this.data.Id);
-    this.databaseService.getAllJobs().subscribe(Jobs => this.Jobs = Jobs)
+    this.databaseService.getAllJobs().subscribe(Jobs => this.Jobs = Jobs);
+    this.databaseService.getAllDepartments().subscribe(Departments => this.Departments = Departments);
+    this.databaseService.getAllIdentityDocumentTypes().subscribe(IdDocTypes => this.IdDocTypes = IdDocTypes)
   }
 }
