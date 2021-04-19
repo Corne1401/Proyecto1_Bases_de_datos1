@@ -152,7 +152,8 @@ function insertEmployee(Name,IdTypeDoc, ValueDocType,IdDepartment, IdJob, BirthD
       request.input('BirthDay', sql.Date, BirthDay);
       request.input('Active', sql.Bit, 1);
       request.execute('dbo.spEmployee_InsertEmployee').
-      then(function(err, recordsets, returnValue, affected) {
+      then(function(err, recordsets, returnValue, affected) { 
+        console.log(err)
       }).catch(function(err) {
         console.log(err)
       });
