@@ -43,7 +43,12 @@ function readCatalogs(){
   
       database.insertEmployee(name,IdTypeDoc,ValueDocType,IdDepartment,IdJob,BirthDay); 
     }
-    
+    for(var key in result['Datos']['Usuarios'][0]['Usuario']){
+      var username = result['Datos']['Usuarios'][0]['Usuario'][key].$.username;
+      var pwd = result['Datos']['Usuarios'][0]['Usuario'][key].$.pwd;
+      var type = result['Datos']['Usuarios'][0]['Usuario'][key].$.tipo;
+      database.insertUser(username, pwd); 
+    }
     
   });
 

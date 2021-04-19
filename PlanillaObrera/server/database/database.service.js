@@ -16,7 +16,8 @@ module.exports = {
     getAllJobs,
     getAllDepartments,
     getAllIdentityDocumentType,
-    deleteEmployee
+    deleteEmployee,
+    insertUser
 }
 
 
@@ -82,8 +83,19 @@ async function getAllIdentityDocumentType(){
   return result.recordset
 }
 
-
-
+function insertUser(username, pwd){
+  var conn = new sql.ConnectionPool(config);
+  conn.connect().then(function(conn) {
+    var request = new sql.Request(conn);
+    //request.input('Id', sql.Int,id);
+    request.input('username', sql.VarChar(255), username);
+    request.input('password', sql.VarChar(255), pwd);
+    request.execute('dbo.spAdmin_InsertUser').
+    then(function(err, recordsets, returnValue, affected) {
+    }).catch(function(err) {
+    });
+  });      
+}
 function insertJob(Id, Namejob, SalaryXHour){
     var conn = new sql.ConnectionPool(config);
     conn.connect().then(function(conn) {
