@@ -3,14 +3,14 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
-import { AuthenticationService } from '../_services/authentication.service';
+import { AuthenticationService } from '../../_services/authentication.service';
 
 @Component({ 
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-login-admin',
+  templateUrl: './login-admin.component.html',
+  styleUrls: ['./login-admin.component.css']
  })
-export class LoginComponent implements OnInit {
+export class LoginAdminComponent implements OnInit {
     loginForm: FormGroup;
     loading = false;
     submitted = false;
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     ) { 
         // redirect to home if already logged in
         if (this.authenticationService.userValue) { 
-            this.router.navigate(['/']);
+            this.router.navigate(['/Administrator']);
         }
     }
 
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
         });
 
         // get return url from route parameters or default to '/'
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/Administrator';
     }
 
     // convenience getter for easy access to form fields
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
         }
 
         this.loading = true;
-        this.authenticationService.login(this.f.username.value, this.f.password.value).pipe(first()).subscribe(data => {
+        this.authenticationService.login(this.f.username.value, this.f.password.value, 1).pipe(first()).subscribe(data => {
                     this.router.navigate([this.returnUrl]);
                 },
                 error => {

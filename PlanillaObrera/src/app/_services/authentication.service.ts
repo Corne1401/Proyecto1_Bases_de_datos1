@@ -24,8 +24,12 @@ export class AuthenticationService {
       return this.userSubject.value;
   }
 
-  login(username: string, password: string) {
-      return this.http.post<any>(`${environment.apiUrl}/users/authenticate`, { username, password })
+
+  //userType = 1 | Administrator
+  //userType = 2 | User
+  login(username: string, password: string, userType: number) {
+      if(userType === 1){
+        return this.http.post<any>(`${environment.apiUrl}/users/authenticateAdmin`, { username, password })
           .pipe(map(user => {
               // store user details and basic auth credentials in local storage to keep user logged in between page refreshes
               user.authdata = window.btoa(username + ':' + password);
@@ -33,6 +37,17 @@ export class AuthenticationService {
               this.userSubject.next(user);
               return user;
           }));
+      }
+      else if(userType === 2){
+        return this.http.post<any>(`${environment.apiUrl}/users/authenticateUser`, { username, password })
+        .pipe(map(user => {
+            // store user details and basic auth credentials in local storage to keep user logged in between page refreshes
+            user.authdata = window.btoa(username + ':' + password);
+            localStorage.setItem('user', JSON.stringify(user));
+            this.userSubject.next(user);
+            return user;
+        }));
+      }
   }
 
   logout() {

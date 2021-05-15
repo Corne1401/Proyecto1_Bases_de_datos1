@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavbarInComponent } from './navbar-in.component';
+import { WelcomeAdminComponent } from './welcome-admin.component';
 
-describe('NavigationComponent', () => {
-  let component: NavbarInComponent;
-  let fixture: ComponentFixture<NavbarInComponent>;
+describe('WelcomeAdminComponent', () => {
+  let component: WelcomeAdminComponent;
+  let fixture: ComponentFixture<WelcomeAdminComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavbarInComponent ]
+      declarations: [ WelcomeAdminComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NavbarInComponent);
+    fixture = TestBed.createComponent(WelcomeAdminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

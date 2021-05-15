@@ -1,9 +1,24 @@
-<app-navbar-in></app-navbar-in>
+<app-navbar-out></app-navbar-out>
 <div class="container py-4">
     <div class="p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5">
           <h1 class="display-5 fw-bold">Welcome</h1>
-          <p class="col-md-8 fs-4">This is the home page of the first project of data bases 1. We are under development right now thanks for understandig</p>
+          
+          <div id="login_buttons">
+
+            <p class="col-md-8 fs-4">Log in as: </p>
+            <mat-list role="list">
+              <mat-list-item role="listitem">
+                <a routerLink="/loginAdmin"  mat-raised-button>Log in as Administrator</a>
+              </mat-list-item>
+              <mat-list-item role="listitem">
+                <a routerLink="/loginEmployee" mat-raised-button>Log in as Employee</a>
+              </mat-list-item>
+            </mat-list>
+  
+          </div>
+          
+          
         </div>
     </div>
 </div>

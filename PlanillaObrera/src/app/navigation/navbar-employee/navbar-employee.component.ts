@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../../_services/authentication.service';
 
 @Component({
-  selector: 'app-navbar-in',
-  templateUrl: './navbar-in.component.html',
-  styleUrls: ['./navbar-in.component.css']
+  selector: 'app-navbar-employee',
+  templateUrl: './navbar-employee.component.html',
+  styleUrls: ['./navbar-employee.component.css']
 })
-export class NavbarInComponent implements OnInit {
+export class NavbarEmployeeComponent implements OnInit {
 
   constructor(
     private authenticationService: AuthenticationService

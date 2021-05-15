@@ -1,0 +1,409 @@
+<Datos>
+    <Catalogos>
+
+        <Puestos>
+            <Puesto Id="1" Nombre="Administrador" SalarioXHora="1200"/>
+            <Puesto Id="2" Nombre="Analyst Junior" SalarioXHora="800"/>
+            <Puesto Id="3" Nombre="Accountant" SalarioXHora="600"/>
+            <Puesto Id="4" Nombre="Analyst Senior" SalarioXHora="1700"/>
+            <Puesto Id="5" Nombre="Sellers" SalarioXHora="2000"/>
+            <Puesto Id="6" Nombre="Janitor" SalarioXHora="550"/>
+            <Puesto Id="7" Nombre="Training" SalarioXHora="12500"/>
+            <Puesto Id="8" Nombre="Proyect Manager" SalarioXHora="200"/>
+            <Puesto Id="9" Nombre="Technical Support" SalarioXHora="200"/>
+            <Puesto Id="10" Nombre="Secretary" SalarioXHora="1400"/>
+        </Puestos>
+
+
+        <Departamentos>
+            <Departamento Id="1" Nombre="Marketing"/>
+            <Departamento Id="2" Nombre="Electronic"/>
+            <Departamento Id="3" Nombre="Communications"/>
+            <Departamento Id="4" Nombre="CustomerService"/>
+
+        </Departamentos>
+
+
+        <Tipos_de_Documento_de_Identificacion>
+            <TipoIdDoc Id="1" Nombre="Identidy Card"/>
+            <TipoIdDoc Id="2" Nombre="Passport"/>
+        </Tipos_de_Documento_de_Identificacion>
+
+        <TiposDeJornada>
+            <TipoDeJornada Id="1" Nombre="Diurna" HoraEntrada="8:00 am" HoraSalida="4:00 pm"/>
+            <TipoDeJornada Id="2" Nombre="Vespertina" HoraEntrada="4:00 pm" HoraSalida="11:00 pm"/>
+            <TipoDeJornada Id="3" Nombre="Nocturna" HoraEntrada="12:00 am" HoraSalida="6:00 am"/>
+        </TiposDeJornada>
+
+        <TiposDeMovimiento>
+            <TipoDeMovimiento Id="1" Nombre="Crédito Horas ordinarias" />
+            <TipoDeMovimiento Id="2" Nombre="Crédito Horas Extra Normales" />
+            <TipoDeMovimiento Id="3" Nombre="Crédito Horas Extra Dobles" />
+            <TipoDeMovimiento Id="4" Nombre="Débito Deducciones de Ley" />
+            <TipoDeMovimiento Id="5" Nombre="Débito Asociación Solidarista" />
+        </TiposDeMovimiento>
+
+        <Feriados>
+            <Feriado Fecha="2021-05-01" Nombre="Día del Trabajador"/>
+            <Feriado Fecha="2021-08-15" Nombre="Día de la Madre"/>
+            <Feriado Fecha="2021-12-25" Nombre="Navidad"/>
+            <Feriado Fecha="2022-01-01" Nombre="Año Nuevo"/>
+        </Feriados>
+
+        <Deducciones>
+            <TipoDeDeduccion Id="1" Nombre="Obligatorio de Ley" Obligatorio="Si" Porcentual="Si" Valor="0.095"/>
+            <TipoDeDeduccion Id="2" Nombre="Ahorro Asociación Solidarista" Obligatorio="No" Porcentual="Si" Valor="0.05"/>
+            <TipoDeDeduccion Id="3" Nombre="Ahorro Vacacional" Obligatorio="No" Porcentual="No" Valor="0"/>
+            <!--Valor no aplica-->
+            <TipoDeDeduccion Id="4" Nombre="Pension Alimenticia" Obligatorio="No" Porcentual="No" Valor="0"/>
+        </Deducciones>
+    </Catalogos>
+
+    <Usuarios>
+        <Usuario username="Goku" pwd="1234" tipo="1"/>
+        <Usuario username="Willy" pwd="1234" tipo="1"/>
+    </Usuarios>
+
+    <!--=================================================================OPERACIONES================================================================================================================-->
+    <Operacion Fecha="2021-02-04">
+        <NuevoEmpleado FechaNacimiento="1976-04-11" Nombre="Mario Saez Garrido" Password="5243" Username="MSaez" ValorDocumentoIdentidad="22047868" idPuesto="10" idTipoDocumentacionIdentidad="2" />
+        <NuevoEmpleado FechaNacimiento="2000-04-20" Nombre="Alana Marquez Vargas" Password="7122" Username="AMarquez" ValorDocumentoIdentidad="41435973" idPuesto="6" idTipoDocumentacionIdentidad="1" />
+        <NuevoEmpleado FechaNacimiento="1961-12-19" Nombre="Pedro Perez Moya" Password="5564" Username="PPerez" ValorDocumentoIdentidad="39069386" idPuesto="1" idTipoDocumentacionIdentidad="1" />
+        <NuevoEmpleado FechaNacimiento="1965-11-07" Nombre="Carlos Alberto Moya Gomez" Password="1662" Username="CMoya" ValorDocumentoIdentidad="73248587" idPuesto="9" idTipoDocumentacionIdentidad="1" />
+        <NuevoEmpleado FechaNacimiento="1995-09-02" Nombre="Miguel Angel Romero Fuentes" Password="7999" Username="MRomero" ValorDocumentoIdentidad="23833627" idPuesto="1" idTipoDocumentacionIdentidad="2" />
+        <NuevoEmpleado FechaNacimiento="1965-05-16" Nombre="Joaquin Molina Cano" Password="8885" Username="JMolina" ValorDocumentoIdentidad="59687950" idPuesto="10" idTipoDocumentacionIdentidad="1" />
+        <NuevoEmpleado FechaNacimiento="1983-03-23" Nombre="Gabriela Saez Lozano" Password="7489" Username="GSaez" ValorDocumentoIdentidad="84844600" idPuesto="5" idTipoDocumentacionIdentidad="1" />
+        <NuevoEmpleado FechaNacimiento="1964-03-04" Nombre="Isaac Pascual Fuentes" Password="5981" Username="IPascual" ValorDocumentoIdentidad="58053945" idPuesto="8" idTipoDocumentacionIdentidad="1" />
+        <NuevoEmpleado FechaNacimiento="1982-08-06" Nombre="Tania Molina Moreno" Password="8393" Username="TMolina" ValorDocumentoIdentidad="10224175" idPuesto="6" idTipoDocumentacionIdentidad="2" />
+        <NuevoEmpleado FechaNacimiento="1974-03-24" Nombre="Karla Patricia Marin Crespo" Password="1784" Username="KMarin" ValorDocumentoIdentidad="70460298" idPuesto="10" idTipoDocumentacionIdentidad="1" />
+        <AsociaEmpleadoConDeduccion IdDeduccion="4" Monto="20387" ValorDocumentoIdentidad="58053945" />
+        <AsociaEmpleadoConDeduccion IdDeduccion="2" Monto="18170" ValorDocumentoIdentidad="41435973" />
+        <AsociaEmpleadoConDeduccion IdDeduccion="2" Monto="10799" ValorDocumentoIdentidad="22047868" />
+        <TipoDeJornadaProximaSemana IdJornada="2" ValorDocumentoIdentidad="22047868" />
+        <TipoDeJornadaProximaSemana IdJornada="2" ValorDocumentoIdentidad="41435973" />
+        <TipoDeJornadaProximaSemana IdJornada="2" ValorDocumentoIdentidad="39069386" />
+        <TipoDeJornadaProximaSemana IdJornada="3" ValorDocumentoIdentidad="73248587" />
+        <TipoDeJornadaProximaSemana IdJornada="1" ValorDocumentoIdentidad="23833627" />
+        <TipoDeJornadaProximaSemana IdJornada="3" ValorDocumentoIdentidad="59687950" />
+        <TipoDeJornadaProximaSemana IdJornada="2" ValorDocumentoIdentidad="84844600" />
+        <TipoDeJornadaProximaSemana IdJornada="3" ValorDocumentoIdentidad="58053945" />
+        <TipoDeJornadaProximaSemana IdJornada="1" ValorDocumentoIdentidad="10224175" />
+        <TipoDeJornadaProximaSemana IdJornada="1" ValorDocumentoIdentidad="70460298" />
+    </Operacion>
+    <Operacion Fecha="2021-02-05">
+        <MarcaDeAsistencia FechaEntrada="2021-02-05 04:16 PM" FechaSalida="2021-02-05 11:06 PM" ValorDocumentoIdentidad="22047868" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-05 03:39 PM" FechaSalida="2021-02-05 11:29 PM" ValorDocumentoIdentidad="41435973" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-05 04:08 PM" FechaSalida="2021-02-05 11:05 PM" ValorDocumentoIdentidad="39069386" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-05 12:08 AM" FechaSalida="2021-02-05 07:16 AM" ValorDocumentoIdentidad="73248587" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-05 08:17 AM" FechaSalida="2021-02-05 05:32 PM" ValorDocumentoIdentidad="23833627" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-05 12:29 AM" FechaSalida="2021-02-05 08:21 AM" ValorDocumentoIdentidad="59687950" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-05 03:58 PM" FechaSalida="2021-02-05 11:58 PM" ValorDocumentoIdentidad="84844600" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-05 12:04 AM" FechaSalida="2021-02-05 06:15 AM" ValorDocumentoIdentidad="58053945" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-05 08:05 AM" FechaSalida="2021-02-05 06:13 PM" ValorDocumentoIdentidad="10224175" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-05 07:41 AM" FechaSalida="2021-02-05 05:19 PM" ValorDocumentoIdentidad="70460298" />
+    </Operacion>
+    <Operacion Fecha="2021-02-06">
+        <MarcaDeAsistencia FechaEntrada="2021-02-06 04:13 PM" FechaSalida="2021-02-06 11:43 PM" ValorDocumentoIdentidad="22047868" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-06 04:19 PM" FechaSalida="2021-02-06 11:14 PM" ValorDocumentoIdentidad="41435973" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-06 04:14 PM" FechaSalida="2021-02-06 11:53 PM" ValorDocumentoIdentidad="39069386" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-06 12:20 AM" FechaSalida="2021-02-06 07:31 AM" ValorDocumentoIdentidad="73248587" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-06 07:54 AM" FechaSalida="2021-02-06 06:22 PM" ValorDocumentoIdentidad="23833627" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-06 12:03 AM" FechaSalida="2021-02-06 08:57 AM" ValorDocumentoIdentidad="59687950" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-06 04:19 PM" FechaSalida="2021-02-06 11:15 PM" ValorDocumentoIdentidad="84844600" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-06 12:12 AM" FechaSalida="2021-02-06 07:08 AM" ValorDocumentoIdentidad="58053945" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-06 07:56 AM" FechaSalida="2021-02-06 06:01 PM" ValorDocumentoIdentidad="10224175" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-06 08:07 AM" FechaSalida="2021-02-06 06:12 PM" ValorDocumentoIdentidad="70460298" />
+    </Operacion>
+    <Operacion Fecha="2021-02-07">
+        <MarcaDeAsistencia FechaEntrada="2021-02-07 03:38 PM" FechaSalida="2021-02-07 11:30 PM" ValorDocumentoIdentidad="22047868" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-07 03:37 PM" FechaSalida="2021-02-07 11:28 PM" ValorDocumentoIdentidad="41435973" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-07 03:44 PM" FechaSalida="2021-02-07 11:54 PM" ValorDocumentoIdentidad="39069386" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-07 12:05 AM" FechaSalida="2021-02-07 06:25 AM" ValorDocumentoIdentidad="73248587" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-07 08:27 AM" FechaSalida="2021-02-07 05:03 PM" ValorDocumentoIdentidad="23833627" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-07 12:07 AM" FechaSalida="2021-02-07 06:26 AM" ValorDocumentoIdentidad="59687950" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-07 03:35 PM" FechaSalida="2021-02-07 11:57 PM" ValorDocumentoIdentidad="84844600" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-07 12:20 AM" FechaSalida="2021-02-07 08:40 AM" ValorDocumentoIdentidad="58053945" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-07 07:49 AM" FechaSalida="2021-02-07 04:26 PM" ValorDocumentoIdentidad="10224175" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-07 08:07 AM" FechaSalida="2021-02-07 05:01 PM" ValorDocumentoIdentidad="70460298" />
+    </Operacion>
+    <Operacion Fecha="2021-02-08">
+        <MarcaDeAsistencia FechaEntrada="2021-02-08 04:02 PM" FechaSalida="2021-02-08 11:10 PM" ValorDocumentoIdentidad="22047868" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-08 03:43 PM" FechaSalida="2021-02-08 11:32 PM" ValorDocumentoIdentidad="41435973" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-08 03:59 PM" FechaSalida="2021-02-08 11:09 PM" ValorDocumentoIdentidad="39069386" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-08 12:18 AM" FechaSalida="2021-02-08 08:09 AM" ValorDocumentoIdentidad="73248587" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-08 07:36 AM" FechaSalida="2021-02-08 06:45 PM" ValorDocumentoIdentidad="23833627" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-08 12:06 AM" FechaSalida="2021-02-08 08:03 AM" ValorDocumentoIdentidad="59687950" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-08 03:43 PM" FechaSalida="2021-02-08 11:34 PM" ValorDocumentoIdentidad="84844600" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-08 12:10 AM" FechaSalida="2021-02-08 06:26 AM" ValorDocumentoIdentidad="58053945" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-08 08:03 AM" FechaSalida="2021-02-08 06:39 PM" ValorDocumentoIdentidad="10224175" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-08 07:59 AM" FechaSalida="2021-02-08 06:54 PM" ValorDocumentoIdentidad="70460298" />
+    </Operacion>
+    <Operacion Fecha="2021-02-09">
+        <MarcaDeAsistencia FechaEntrada="2021-02-09 04:00 PM" FechaSalida="2021-02-09 11:19 PM" ValorDocumentoIdentidad="22047868" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-09 04:12 PM" FechaSalida="2021-02-09 11:30 PM" ValorDocumentoIdentidad="41435973" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-09 03:45 PM" FechaSalida="2021-02-09 11:51 PM" ValorDocumentoIdentidad="39069386" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-09 12:23 AM" FechaSalida="2021-02-09 08:45 AM" ValorDocumentoIdentidad="73248587" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-09 08:08 AM" FechaSalida="2021-02-09 04:35 PM" ValorDocumentoIdentidad="23833627" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-09 12:19 AM" FechaSalida="2021-02-09 07:06 AM" ValorDocumentoIdentidad="59687950" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-09 03:56 PM" FechaSalida="2021-02-09 11:56 PM" ValorDocumentoIdentidad="84844600" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-09 12:27 AM" FechaSalida="2021-02-09 07:24 AM" ValorDocumentoIdentidad="58053945" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-09 08:22 AM" FechaSalida="2021-02-09 06:11 PM" ValorDocumentoIdentidad="10224175" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-09 07:45 AM" FechaSalida="2021-02-09 04:57 PM" ValorDocumentoIdentidad="70460298" />
+    </Operacion>
+    <Operacion Fecha="2021-02-10">
+        <MarcaDeAsistencia FechaEntrada="2021-02-10 04:09 PM" FechaSalida="2021-02-10 11:52 PM" ValorDocumentoIdentidad="22047868" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-10 04:10 PM" FechaSalida="2021-02-10 11:23 PM" ValorDocumentoIdentidad="41435973" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-10 03:31 PM" FechaSalida="2021-02-10 11:40 PM" ValorDocumentoIdentidad="39069386" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-10 12:16 AM" FechaSalida="2021-02-10 06:01 AM" ValorDocumentoIdentidad="73248587" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-10 08:29 AM" FechaSalida="2021-02-10 06:19 PM" ValorDocumentoIdentidad="23833627" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-10 12:26 AM" FechaSalida="2021-02-10 08:13 AM" ValorDocumentoIdentidad="59687950" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-10 04:12 PM" FechaSalida="2021-02-10 11:17 PM" ValorDocumentoIdentidad="84844600" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-10 12:00 AM" FechaSalida="2021-02-10 06:55 AM" ValorDocumentoIdentidad="58053945" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-10 08:05 AM" FechaSalida="2021-02-10 05:07 PM" ValorDocumentoIdentidad="10224175" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-10 07:40 AM" FechaSalida="2021-02-10 05:34 PM" ValorDocumentoIdentidad="70460298" />
+    </Operacion>
+    <Operacion Fecha="2021-02-11">
+        <NuevoEmpleado FechaNacimiento="1963-01-05" Nombre="Lucia Rubio Gil" Password="9030" Username="LRubio" ValorDocumentoIdentidad="97320931" idPuesto="2" idTipoDocumentacionIdentidad="2" />
+        <NuevoEmpleado FechaNacimiento="1967-12-23" Nombre="Juan Sebastian Leon Leon" Password="3861" Username="JLeon" ValorDocumentoIdentidad="70331492" idPuesto="8" idTipoDocumentacionIdentidad="2" />
+        <AsociaEmpleadoConDeduccion IdDeduccion="2" Monto="12687" ValorDocumentoIdentidad="73248587" />
+        <TipoDeJornadaProximaSemana IdJornada="3" ValorDocumentoIdentidad="22047868" />
+        <TipoDeJornadaProximaSemana IdJornada="3" ValorDocumentoIdentidad="41435973" />
+        <TipoDeJornadaProximaSemana IdJornada="3" ValorDocumentoIdentidad="39069386" />
+        <TipoDeJornadaProximaSemana IdJornada="1" ValorDocumentoIdentidad="73248587" />
+        <TipoDeJornadaProximaSemana IdJornada="2" ValorDocumentoIdentidad="23833627" />
+        <TipoDeJornadaProximaSemana IdJornada="1" ValorDocumentoIdentidad="59687950" />
+        <TipoDeJornadaProximaSemana IdJornada="3" ValorDocumentoIdentidad="84844600" />
+        <TipoDeJornadaProximaSemana IdJornada="1" ValorDocumentoIdentidad="58053945" />
+        <TipoDeJornadaProximaSemana IdJornada="2" ValorDocumentoIdentidad="10224175" />
+        <TipoDeJornadaProximaSemana IdJornada="2" ValorDocumentoIdentidad="70460298" />
+        <TipoDeJornadaProximaSemana IdJornada="1" ValorDocumentoIdentidad="97320931" />
+        <TipoDeJornadaProximaSemana IdJornada="2" ValorDocumentoIdentidad="70331492" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-11 12:24 AM" FechaSalida="2021-02-11 08:40 AM" ValorDocumentoIdentidad="22047868" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-11 12:15 AM" FechaSalida="2021-02-11 08:57 AM" ValorDocumentoIdentidad="41435973" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-11 12:05 AM" FechaSalida="2021-02-11 06:03 AM" ValorDocumentoIdentidad="39069386" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-11 07:58 AM" FechaSalida="2021-02-11 06:07 PM" ValorDocumentoIdentidad="73248587" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-11 04:02 PM" FechaSalida="2021-02-11 11:46 PM" ValorDocumentoIdentidad="23833627" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-11 08:24 AM" FechaSalida="2021-02-11 06:42 PM" ValorDocumentoIdentidad="59687950" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-11 12:23 AM" FechaSalida="2021-02-11 08:45 AM" ValorDocumentoIdentidad="84844600" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-11 07:34 AM" FechaSalida="2021-02-11 06:01 PM" ValorDocumentoIdentidad="58053945" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-11 04:17 PM" FechaSalida="2021-02-11 11:24 PM" ValorDocumentoIdentidad="10224175" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-11 03:47 PM" FechaSalida="2021-02-11 11:54 PM" ValorDocumentoIdentidad="70460298" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-11 07:57 AM" FechaSalida="2021-02-11 04:43 PM" ValorDocumentoIdentidad="97320931" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-11 03:45 PM" FechaSalida="2021-02-11 11:42 PM" ValorDocumentoIdentidad="70331492" />
+    </Operacion>
+    <Operacion Fecha="2021-02-12">
+        <MarcaDeAsistencia FechaEntrada="2021-02-12 12:11 AM" FechaSalida="2021-02-12 07:35 AM" ValorDocumentoIdentidad="22047868" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-12 12:10 AM" FechaSalida="2021-02-12 07:36 AM" ValorDocumentoIdentidad="41435973" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-12 12:15 AM" FechaSalida="2021-02-12 08:41 AM" ValorDocumentoIdentidad="39069386" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-12 08:08 AM" FechaSalida="2021-02-12 04:12 PM" ValorDocumentoIdentidad="73248587" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-12 03:39 PM" FechaSalida="2021-02-12 11:02 PM" ValorDocumentoIdentidad="23833627" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-12 08:10 AM" FechaSalida="2021-02-12 05:06 PM" ValorDocumentoIdentidad="59687950" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-12 12:08 AM" FechaSalida="2021-02-12 06:35 AM" ValorDocumentoIdentidad="84844600" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-12 08:08 AM" FechaSalida="2021-02-12 05:37 PM" ValorDocumentoIdentidad="58053945" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-12 03:43 PM" FechaSalida="2021-02-12 11:26 PM" ValorDocumentoIdentidad="10224175" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-12 04:07 PM" FechaSalida="2021-02-12 11:16 PM" ValorDocumentoIdentidad="70460298" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-12 08:03 AM" FechaSalida="2021-02-12 06:42 PM" ValorDocumentoIdentidad="97320931" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-12 04:26 PM" FechaSalida="2021-02-12 11:34 PM" ValorDocumentoIdentidad="70331492" />
+    </Operacion>
+    <Operacion Fecha="2021-02-13">
+        <MarcaDeAsistencia FechaEntrada="2021-02-13 12:28 AM" FechaSalida="2021-02-13 06:57 AM" ValorDocumentoIdentidad="22047868" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-13 12:15 AM" FechaSalida="2021-02-13 08:48 AM" ValorDocumentoIdentidad="41435973" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-13 12:23 AM" FechaSalida="2021-02-13 07:16 AM" ValorDocumentoIdentidad="39069386" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-13 08:29 AM" FechaSalida="2021-02-13 04:02 PM" ValorDocumentoIdentidad="73248587" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-13 03:41 PM" FechaSalida="2021-02-13 11:37 PM" ValorDocumentoIdentidad="23833627" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-13 07:31 AM" FechaSalida="2021-02-13 06:32 PM" ValorDocumentoIdentidad="59687950" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-13 12:22 AM" FechaSalida="2021-02-13 06:44 AM" ValorDocumentoIdentidad="84844600" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-13 08:13 AM" FechaSalida="2021-02-13 05:30 PM" ValorDocumentoIdentidad="58053945" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-13 03:52 PM" FechaSalida="2021-02-13 11:38 PM" ValorDocumentoIdentidad="10224175" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-13 03:47 PM" FechaSalida="2021-02-13 11:25 PM" ValorDocumentoIdentidad="70460298" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-13 07:53 AM" FechaSalida="2021-02-13 04:38 PM" ValorDocumentoIdentidad="97320931" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-13 03:47 PM" FechaSalida="2021-02-13 11:31 PM" ValorDocumentoIdentidad="70331492" />
+    </Operacion>
+    <Operacion Fecha="2021-02-14">
+        <MarcaDeAsistencia FechaEntrada="2021-02-14 12:18 AM" FechaSalida="2021-02-14 07:17 AM" ValorDocumentoIdentidad="22047868" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-14 12:06 AM" FechaSalida="2021-02-14 07:47 AM" ValorDocumentoIdentidad="41435973" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-14 12:12 AM" FechaSalida="2021-02-14 07:10 AM" ValorDocumentoIdentidad="39069386" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-14 08:26 AM" FechaSalida="2021-02-14 06:31 PM" ValorDocumentoIdentidad="73248587" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-14 04:13 PM" FechaSalida="2021-02-14 11:14 PM" ValorDocumentoIdentidad="23833627" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-14 08:26 AM" FechaSalida="2021-02-14 06:44 PM" ValorDocumentoIdentidad="59687950" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-14 12:03 AM" FechaSalida="2021-02-14 08:11 AM" ValorDocumentoIdentidad="84844600" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-14 08:26 AM" FechaSalida="2021-02-14 04:55 PM" ValorDocumentoIdentidad="58053945" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-14 03:48 PM" FechaSalida="2021-02-14 11:49 PM" ValorDocumentoIdentidad="10224175" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-14 03:34 PM" FechaSalida="2021-02-14 11:20 PM" ValorDocumentoIdentidad="70460298" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-14 08:07 AM" FechaSalida="2021-02-14 04:36 PM" ValorDocumentoIdentidad="97320931" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-14 04:14 PM" FechaSalida="2021-02-14 11:11 PM" ValorDocumentoIdentidad="70331492" />
+    </Operacion>
+    <Operacion Fecha="2021-02-15">
+        <MarcaDeAsistencia FechaEntrada="2021-02-15 12:00 AM" FechaSalida="2021-02-15 08:39 AM" ValorDocumentoIdentidad="22047868" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-15 12:28 AM" FechaSalida="2021-02-15 06:41 AM" ValorDocumentoIdentidad="41435973" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-15 12:01 AM" FechaSalida="2021-02-15 06:57 AM" ValorDocumentoIdentidad="39069386" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-15 08:06 AM" FechaSalida="2021-02-15 05:59 PM" ValorDocumentoIdentidad="73248587" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-15 03:47 PM" FechaSalida="2021-02-15 11:39 PM" ValorDocumentoIdentidad="23833627" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-15 08:20 AM" FechaSalida="2021-02-15 05:42 PM" ValorDocumentoIdentidad="59687950" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-15 12:15 AM" FechaSalida="2021-02-15 08:50 AM" ValorDocumentoIdentidad="84844600" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-15 07:52 AM" FechaSalida="2021-02-15 05:58 PM" ValorDocumentoIdentidad="58053945" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-15 04:21 PM" FechaSalida="2021-02-15 11:37 PM" ValorDocumentoIdentidad="10224175" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-15 04:05 PM" FechaSalida="2021-02-15 11:35 PM" ValorDocumentoIdentidad="70460298" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-15 08:13 AM" FechaSalida="2021-02-15 04:44 PM" ValorDocumentoIdentidad="97320931" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-15 03:56 PM" FechaSalida="2021-02-15 11:43 PM" ValorDocumentoIdentidad="70331492" />
+    </Operacion>
+    <Operacion Fecha="2021-02-16">
+        <MarcaDeAsistencia FechaEntrada="2021-02-16 12:12 AM" FechaSalida="2021-02-16 06:50 AM" ValorDocumentoIdentidad="22047868" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-16 12:01 AM" FechaSalida="2021-02-16 08:33 AM" ValorDocumentoIdentidad="41435973" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-16 12:20 AM" FechaSalida="2021-02-16 07:40 AM" ValorDocumentoIdentidad="39069386" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-16 07:53 AM" FechaSalida="2021-02-16 05:58 PM" ValorDocumentoIdentidad="73248587" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-16 03:54 PM" FechaSalida="2021-02-16 11:50 PM" ValorDocumentoIdentidad="23833627" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-16 08:02 AM" FechaSalida="2021-02-16 06:19 PM" ValorDocumentoIdentidad="59687950" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-16 12:12 AM" FechaSalida="2021-02-16 08:57 AM" ValorDocumentoIdentidad="84844600" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-16 08:28 AM" FechaSalida="2021-02-16 05:00 PM" ValorDocumentoIdentidad="58053945" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-16 03:48 PM" FechaSalida="2021-02-16 11:52 PM" ValorDocumentoIdentidad="10224175" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-16 04:26 PM" FechaSalida="2021-02-16 11:46 PM" ValorDocumentoIdentidad="70460298" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-16 08:07 AM" FechaSalida="2021-02-16 04:06 PM" ValorDocumentoIdentidad="97320931" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-16 04:21 PM" FechaSalida="2021-02-16 11:16 PM" ValorDocumentoIdentidad="70331492" />
+    </Operacion>
+    <Operacion Fecha="2021-02-17">
+        <MarcaDeAsistencia FechaEntrada="2021-02-17 12:20 AM" FechaSalida="2021-02-17 08:22 AM" ValorDocumentoIdentidad="22047868" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-17 12:10 AM" FechaSalida="2021-02-17 08:10 AM" ValorDocumentoIdentidad="41435973" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-17 12:14 AM" FechaSalida="2021-02-17 06:36 AM" ValorDocumentoIdentidad="39069386" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-17 08:03 AM" FechaSalida="2021-02-17 06:16 PM" ValorDocumentoIdentidad="73248587" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-17 04:24 PM" FechaSalida="2021-02-17 11:23 PM" ValorDocumentoIdentidad="23833627" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-17 08:04 AM" FechaSalida="2021-02-17 05:02 PM" ValorDocumentoIdentidad="59687950" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-17 12:28 AM" FechaSalida="2021-02-17 06:20 AM" ValorDocumentoIdentidad="84844600" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-17 08:19 AM" FechaSalida="2021-02-17 05:28 PM" ValorDocumentoIdentidad="58053945" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-17 04:03 PM" FechaSalida="2021-02-17 11:41 PM" ValorDocumentoIdentidad="10224175" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-17 04:12 PM" FechaSalida="2021-02-17 11:32 PM" ValorDocumentoIdentidad="70460298" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-17 08:22 AM" FechaSalida="2021-02-17 04:56 PM" ValorDocumentoIdentidad="97320931" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-17 03:49 PM" FechaSalida="2021-02-17 11:13 PM" ValorDocumentoIdentidad="70331492" />
+    </Operacion>
+    <Operacion Fecha="2021-02-18">
+        <EliminarEmpleado ValorDocumentoIdentidad="73248587" />
+        <NuevoEmpleado FechaNacimiento="1960-07-21" Nombre="Maria Fernandez Vega" Password="2760" Username="MFernandez" ValorDocumentoIdentidad="65180958" idPuesto="5" idTipoDocumentacionIdentidad="1" />
+        <NuevoEmpleado FechaNacimiento="1993-12-19" Nombre="Zoe Moya Carrasco" Password="8787" Username="ZMoya" ValorDocumentoIdentidad="27585230" idPuesto="4" idTipoDocumentacionIdentidad="1" />
+        <NuevoEmpleado FechaNacimiento="1980-05-15" Nombre="Ariana Lorenzo Cano" Password="5554" Username="ALorenzo" ValorDocumentoIdentidad="99941917" idPuesto="9" idTipoDocumentacionIdentidad="2" />
+        <DesasociaEmpleadoConDeduccion IdDeduccion="2" ValorDocumentoIdentidad="22047868" />
+        <TipoDeJornadaProximaSemana IdJornada="1" ValorDocumentoIdentidad="22047868" />
+        <TipoDeJornadaProximaSemana IdJornada="1" ValorDocumentoIdentidad="41435973" />
+        <TipoDeJornadaProximaSemana IdJornada="1" ValorDocumentoIdentidad="39069386" />
+        <TipoDeJornadaProximaSemana IdJornada="3" ValorDocumentoIdentidad="23833627" />
+        <TipoDeJornadaProximaSemana IdJornada="2" ValorDocumentoIdentidad="59687950" />
+        <TipoDeJornadaProximaSemana IdJornada="1" ValorDocumentoIdentidad="84844600" />
+        <TipoDeJornadaProximaSemana IdJornada="2" ValorDocumentoIdentidad="58053945" />
+        <TipoDeJornadaProximaSemana IdJornada="3" ValorDocumentoIdentidad="10224175" />
+        <TipoDeJornadaProximaSemana IdJornada="3" ValorDocumentoIdentidad="70460298" />
+        <TipoDeJornadaProximaSemana IdJornada="2" ValorDocumentoIdentidad="97320931" />
+        <TipoDeJornadaProximaSemana IdJornada="3" ValorDocumentoIdentidad="70331492" />
+        <TipoDeJornadaProximaSemana IdJornada="2" ValorDocumentoIdentidad="65180958" />
+        <TipoDeJornadaProximaSemana IdJornada="2" ValorDocumentoIdentidad="27585230" />
+        <TipoDeJornadaProximaSemana IdJornada="1" ValorDocumentoIdentidad="99941917" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-18 08:28 AM" FechaSalida="2021-02-18 06:35 PM" ValorDocumentoIdentidad="22047868" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-18 07:33 AM" FechaSalida="2021-02-18 05:50 PM" ValorDocumentoIdentidad="41435973" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-18 08:16 AM" FechaSalida="2021-02-18 04:17 PM" ValorDocumentoIdentidad="39069386" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-18 12:12 AM" FechaSalida="2021-02-18 06:24 AM" ValorDocumentoIdentidad="23833627" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-18 03:38 PM" FechaSalida="2021-02-18 11:58 PM" ValorDocumentoIdentidad="59687950" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-18 07:34 AM" FechaSalida="2021-02-18 05:18 PM" ValorDocumentoIdentidad="84844600" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-18 03:45 PM" FechaSalida="2021-02-18 11:14 PM" ValorDocumentoIdentidad="58053945" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-18 12:21 AM" FechaSalida="2021-02-18 06:32 AM" ValorDocumentoIdentidad="10224175" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-18 12:26 AM" FechaSalida="2021-02-18 08:14 AM" ValorDocumentoIdentidad="70460298" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-18 03:47 PM" FechaSalida="2021-02-18 11:11 PM" ValorDocumentoIdentidad="97320931" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-18 12:10 AM" FechaSalida="2021-02-18 06:35 AM" ValorDocumentoIdentidad="70331492" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-18 04:20 PM" FechaSalida="2021-02-18 11:21 PM" ValorDocumentoIdentidad="65180958" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-18 04:28 PM" FechaSalida="2021-02-18 11:39 PM" ValorDocumentoIdentidad="27585230" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-18 08:18 AM" FechaSalida="2021-02-18 05:26 PM" ValorDocumentoIdentidad="99941917" />
+    </Operacion>
+    <Operacion Fecha="2021-02-19">
+        <MarcaDeAsistencia FechaEntrada="2021-02-19 08:09 AM" FechaSalida="2021-02-19 05:48 PM" ValorDocumentoIdentidad="22047868" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-19 08:20 AM" FechaSalida="2021-02-19 04:54 PM" ValorDocumentoIdentidad="41435973" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-19 08:00 AM" FechaSalida="2021-02-19 05:21 PM" ValorDocumentoIdentidad="39069386" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-19 12:14 AM" FechaSalida="2021-02-19 07:20 AM" ValorDocumentoIdentidad="23833627" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-19 04:21 PM" FechaSalida="2021-02-19 11:01 PM" ValorDocumentoIdentidad="59687950" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-19 07:55 AM" FechaSalida="2021-02-19 05:27 PM" ValorDocumentoIdentidad="84844600" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-19 03:40 PM" FechaSalida="2021-02-19 11:39 PM" ValorDocumentoIdentidad="58053945" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-19 12:09 AM" FechaSalida="2021-02-19 06:29 AM" ValorDocumentoIdentidad="10224175" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-19 12:24 AM" FechaSalida="2021-02-19 07:50 AM" ValorDocumentoIdentidad="70460298" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-19 04:16 PM" FechaSalida="2021-02-19 11:16 PM" ValorDocumentoIdentidad="97320931" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-19 12:20 AM" FechaSalida="2021-02-19 08:55 AM" ValorDocumentoIdentidad="70331492" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-19 04:24 PM" FechaSalida="2021-02-19 11:33 PM" ValorDocumentoIdentidad="65180958" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-19 04:19 PM" FechaSalida="2021-02-19 11:25 PM" ValorDocumentoIdentidad="27585230" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-19 07:53 AM" FechaSalida="2021-02-19 06:02 PM" ValorDocumentoIdentidad="99941917" />
+    </Operacion>
+    <Operacion Fecha="2021-02-20">
+        <MarcaDeAsistencia FechaEntrada="2021-02-20 08:07 AM" FechaSalida="2021-02-20 06:48 PM" ValorDocumentoIdentidad="22047868" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-20 08:13 AM" FechaSalida="2021-02-20 06:30 PM" ValorDocumentoIdentidad="41435973" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-20 07:52 AM" FechaSalida="2021-02-20 04:07 PM" ValorDocumentoIdentidad="39069386" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-20 12:12 AM" FechaSalida="2021-02-20 06:48 AM" ValorDocumentoIdentidad="23833627" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-20 04:11 PM" FechaSalida="2021-02-20 11:08 PM" ValorDocumentoIdentidad="59687950" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-20 08:15 AM" FechaSalida="2021-02-20 05:02 PM" ValorDocumentoIdentidad="84844600" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-20 04:20 PM" FechaSalida="2021-02-20 11:49 PM" ValorDocumentoIdentidad="58053945" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-20 12:20 AM" FechaSalida="2021-02-20 08:01 AM" ValorDocumentoIdentidad="10224175" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-20 12:16 AM" FechaSalida="2021-02-20 08:44 AM" ValorDocumentoIdentidad="70460298" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-20 03:55 PM" FechaSalida="2021-02-20 11:03 PM" ValorDocumentoIdentidad="97320931" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-20 12:19 AM" FechaSalida="2021-02-20 06:39 AM" ValorDocumentoIdentidad="70331492" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-20 03:37 PM" FechaSalida="2021-02-20 11:45 PM" ValorDocumentoIdentidad="65180958" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-20 04:13 PM" FechaSalida="2021-02-20 11:19 PM" ValorDocumentoIdentidad="27585230" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-20 07:39 AM" FechaSalida="2021-02-20 05:42 PM" ValorDocumentoIdentidad="99941917" />
+    </Operacion>
+    <Operacion Fecha="2021-02-21">
+        <MarcaDeAsistencia FechaEntrada="2021-02-21 07:40 AM" FechaSalida="2021-02-21 05:18 PM" ValorDocumentoIdentidad="22047868" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-21 07:47 AM" FechaSalida="2021-02-21 06:41 PM" ValorDocumentoIdentidad="41435973" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-21 08:23 AM" FechaSalida="2021-02-21 04:46 PM" ValorDocumentoIdentidad="39069386" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-21 12:26 AM" FechaSalida="2021-02-21 06:57 AM" ValorDocumentoIdentidad="23833627" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-21 03:50 PM" FechaSalida="2021-02-21 11:03 PM" ValorDocumentoIdentidad="59687950" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-21 08:02 AM" FechaSalida="2021-02-21 04:58 PM" ValorDocumentoIdentidad="84844600" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-21 03:50 PM" FechaSalida="2021-02-21 11:53 PM" ValorDocumentoIdentidad="58053945" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-21 12:07 AM" FechaSalida="2021-02-21 06:34 AM" ValorDocumentoIdentidad="10224175" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-21 12:02 AM" FechaSalida="2021-02-21 08:33 AM" ValorDocumentoIdentidad="70460298" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-21 04:26 PM" FechaSalida="2021-02-21 11:00 PM" ValorDocumentoIdentidad="97320931" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-21 12:04 AM" FechaSalida="2021-02-21 07:18 AM" ValorDocumentoIdentidad="70331492" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-21 04:06 PM" FechaSalida="2021-02-21 11:23 PM" ValorDocumentoIdentidad="65180958" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-21 03:52 PM" FechaSalida="2021-02-21 11:19 PM" ValorDocumentoIdentidad="27585230" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-21 07:34 AM" FechaSalida="2021-02-21 05:40 PM" ValorDocumentoIdentidad="99941917" />
+    </Operacion>
+    <Operacion Fecha="2021-02-22">
+        <MarcaDeAsistencia FechaEntrada="2021-02-22 07:45 AM" FechaSalida="2021-02-22 04:09 PM" ValorDocumentoIdentidad="22047868" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-22 08:13 AM" FechaSalida="2021-02-22 05:21 PM" ValorDocumentoIdentidad="41435973" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-22 08:07 AM" FechaSalida="2021-02-22 06:50 PM" ValorDocumentoIdentidad="39069386" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-22 12:00 AM" FechaSalida="2021-02-22 07:49 AM" ValorDocumentoIdentidad="23833627" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-22 03:41 PM" FechaSalida="2021-02-22 11:34 PM" ValorDocumentoIdentidad="59687950" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-22 08:00 AM" FechaSalida="2021-02-22 04:13 PM" ValorDocumentoIdentidad="84844600" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-22 03:54 PM" FechaSalida="2021-02-22 11:37 PM" ValorDocumentoIdentidad="58053945" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-22 12:04 AM" FechaSalida="2021-02-22 07:10 AM" ValorDocumentoIdentidad="10224175" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-22 12:01 AM" FechaSalida="2021-02-22 07:43 AM" ValorDocumentoIdentidad="70460298" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-22 03:54 PM" FechaSalida="2021-02-22 11:44 PM" ValorDocumentoIdentidad="97320931" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-22 12:03 AM" FechaSalida="2021-02-22 06:14 AM" ValorDocumentoIdentidad="70331492" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-22 04:19 PM" FechaSalida="2021-02-22 11:33 PM" ValorDocumentoIdentidad="65180958" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-22 04:04 PM" FechaSalida="2021-02-22 11:37 PM" ValorDocumentoIdentidad="27585230" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-22 08:22 AM" FechaSalida="2021-02-22 04:03 PM" ValorDocumentoIdentidad="99941917" />
+    </Operacion>
+    <Operacion Fecha="2021-02-23">
+        <MarcaDeAsistencia FechaEntrada="2021-02-23 08:09 AM" FechaSalida="2021-02-23 05:10 PM" ValorDocumentoIdentidad="22047868" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-23 07:56 AM" FechaSalida="2021-02-23 05:32 PM" ValorDocumentoIdentidad="41435973" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-23 07:45 AM" FechaSalida="2021-02-23 05:49 PM" ValorDocumentoIdentidad="39069386" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-23 12:16 AM" FechaSalida="2021-02-23 08:23 AM" ValorDocumentoIdentidad="23833627" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-23 03:44 PM" FechaSalida="2021-02-23 11:11 PM" ValorDocumentoIdentidad="59687950" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-23 08:04 AM" FechaSalida="2021-02-23 04:59 PM" ValorDocumentoIdentidad="84844600" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-23 04:08 PM" FechaSalida="2021-02-23 11:16 PM" ValorDocumentoIdentidad="58053945" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-23 12:14 AM" FechaSalida="2021-02-23 07:44 AM" ValorDocumentoIdentidad="10224175" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-23 12:26 AM" FechaSalida="2021-02-23 06:58 AM" ValorDocumentoIdentidad="70460298" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-23 04:02 PM" FechaSalida="2021-02-23 11:26 PM" ValorDocumentoIdentidad="97320931" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-23 12:12 AM" FechaSalida="2021-02-23 07:21 AM" ValorDocumentoIdentidad="70331492" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-23 04:27 PM" FechaSalida="2021-02-23 11:45 PM" ValorDocumentoIdentidad="65180958" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-23 03:51 PM" FechaSalida="2021-02-23 11:21 PM" ValorDocumentoIdentidad="27585230" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-23 07:59 AM" FechaSalida="2021-02-23 06:05 PM" ValorDocumentoIdentidad="99941917" />
+    </Operacion>
+    <Operacion Fecha="2021-02-24">
+        <MarcaDeAsistencia FechaEntrada="2021-02-24 08:01 AM" FechaSalida="2021-02-24 05:15 PM" ValorDocumentoIdentidad="22047868" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-24 08:02 AM" FechaSalida="2021-02-24 04:56 PM" ValorDocumentoIdentidad="41435973" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-24 08:28 AM" FechaSalida="2021-02-24 04:09 PM" ValorDocumentoIdentidad="39069386" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-24 12:09 AM" FechaSalida="2021-02-24 08:51 AM" ValorDocumentoIdentidad="23833627" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-24 04:06 PM" FechaSalida="2021-02-24 11:42 PM" ValorDocumentoIdentidad="59687950" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-24 07:55 AM" FechaSalida="2021-02-24 04:26 PM" ValorDocumentoIdentidad="84844600" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-24 03:31 PM" FechaSalida="2021-02-24 11:24 PM" ValorDocumentoIdentidad="58053945" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-24 12:09 AM" FechaSalida="2021-02-24 08:27 AM" ValorDocumentoIdentidad="10224175" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-24 12:09 AM" FechaSalida="2021-02-24 07:25 AM" ValorDocumentoIdentidad="70460298" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-24 04:10 PM" FechaSalida="2021-02-24 11:18 PM" ValorDocumentoIdentidad="97320931" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-24 12:19 AM" FechaSalida="2021-02-24 07:04 AM" ValorDocumentoIdentidad="70331492" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-24 03:55 PM" FechaSalida="2021-02-24 11:45 PM" ValorDocumentoIdentidad="65180958" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-24 04:26 PM" FechaSalida="2021-02-24 11:23 PM" ValorDocumentoIdentidad="27585230" />
+        <MarcaDeAsistencia FechaEntrada="2021-02-24 08:11 AM" FechaSalida="2021-02-24 06:03 PM" ValorDocumentoIdentidad="99941917" />
+    </Operacion>
+</Datos>

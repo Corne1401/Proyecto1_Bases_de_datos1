@@ -22,9 +22,9 @@ module.exports = {
 
 
 let config = {
-    user: 'admin',
-    password: 'Proyecto-BD-1',
-    server: 'planillaobrera.cazk1jfc5xpu.us-east-2.rds.amazonaws.com', 
+    user: 'DBprogra',
+    password: '1234',
+    server: '25.89.8.96', 
     database: 'tarea_programada' 
 };
 
@@ -83,11 +83,10 @@ async function getAllIdentityDocumentType(){
   return result.recordset
 }
 
-function insertUser(username, pwd, id){
+function insertUser(username, pwd){
   var conn = new sql.ConnectionPool(config);
   conn.connect().then(function(conn) {
     var request = new sql.Request(conn);
-    request.input('Id', sql.Int,id);
     request.input('username', sql.VarChar(255), username);
     request.input('password', sql.VarChar(255), pwd);
     request.execute('dbo.spAdmin_InsertUser').
