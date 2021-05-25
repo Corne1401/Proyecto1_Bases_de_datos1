@@ -21,7 +21,7 @@ app.use('/db', require('./database/database.controller'));
 app.use(errorHandler);
 
 //read Catalogs and no-Catalogs
-readCatalogs.readCatalogs();
+//readCatalogs.readCatalogs();
 
 
 // start server

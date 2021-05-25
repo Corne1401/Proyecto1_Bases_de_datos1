@@ -1,10 +1,10 @@
 <div class="container-fluid py-4">
     <div class="p-5 mb-4 bg-light rounded-3">
-        <h2>Employees</h2>
+        <h2>Week Payroll</h2>
         <div class="d-flex">
-            <input [(ngModel)]="searchForm" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <!-- <input [(ngModel)]="searchForm" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" id="submitBtn" (click)="onSearch()">Search</button>
-            <button class="btn btn-outline-success" id="submitBtn" (click)="addEmployee()">New</button>
+            <button class="btn btn-outline-success" id="submitBtn" (click)="addEmployee()">New</button> -->
         </div>
         
         <table class="table table-striped table-hover">
@@ -16,7 +16,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let varEmployee of this.employees">
+                <!-- <tr *ngFor="let varEmployee of this.employees">
                     <th>{{varEmployee.Name}}</th>
                     <th>{{findJob(varEmployee.IdJob)}}</th>
                     <th>
@@ -26,7 +26,7 @@
                             <button mat-menu-item (click)="deleteEmployee(varEmployee.Id)">Delete</button>
                         </mat-menu>
                     </th>
-                </tr>
+                </tr> -->
             </tbody> 
         </table>
 

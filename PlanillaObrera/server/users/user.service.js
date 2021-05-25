@@ -1,7 +1,7 @@
 const sql = require('../database/database.service')
 module.exports = {
     authenticateAdmin,
-    authenticateUser,
+    authenticateEmployee,
     getAll
 };
 
@@ -14,11 +14,11 @@ async function authenticateAdmin({ username, password }) {
     }
 }
 
-async function authenticateUser({ username, password }) {
-    const users = await sql.getAllEmployees();
-    const user = users.find(u => u.username === username && u.password === password);
-    if (user) {
-        const { password, ...userWithoutPassword } = admin;
+async function authenticateEmployee({ username, password }) {
+    const employees = await sql.getAllEmployees();
+    const employee = employees.find(u => u.Username === username && u.password === password);
+    if (employee) {
+        const { password, ...userWithoutPassword } = employee;
         return userWithoutPassword;
     }
 }

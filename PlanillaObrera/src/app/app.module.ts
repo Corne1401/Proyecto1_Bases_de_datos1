@@ -32,6 +32,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { LoginEmployeeComponent } from './login/login-employee/login-employee.component';
 import { WelcomeAdminComponent } from './home/welcome-admin/welcome-admin.component';
 import { WelcomeEmployeeComponent } from './home/welcome-employee/welcome-employee.component';
+import { WeekPayrollComponent } from './tables/week-payroll/week-payroll.component';
+import { MonthPayrollComponent } from './tables/month-payroll/month-payroll.component';
 
 
 @NgModule({
@@ -49,6 +51,8 @@ import { WelcomeEmployeeComponent } from './home/welcome-employee/welcome-employ
     NavbarEmployeeComponent,
     WelcomeAdminComponent,
     WelcomeEmployeeComponent,
+    WeekPayrollComponent,
+    MonthPayrollComponent,
   ],
   imports: [
     BrowserModule,
